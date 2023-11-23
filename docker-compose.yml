@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  cakephp-app:
+    container_name: cakephp
+    build:
+      context: .
+
+    ports:
+      - 8000:80
+    volumes:
+      - ./meu-cake:/var/www/html
+    depends_on:
+      - postgres
+    networks:
+      - my-network
+    environment:
+      - APACHE_SERVER_NAME=localhost
+      - PHP_OPTIONS=-d default_socket_timeout=600
+    
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: my_database
+      POSTGRES_USER: dudamesdc
+      POSTGRES_PASSWORD: MariaDuda@29
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+
+networks:
+  my-network:
