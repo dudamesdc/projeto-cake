@@ -13,6 +13,7 @@ class PostsController extends AppController {
 
     public function add() {
         if ($this->request->is('post')) {
+            $this->request->data['Post']['user_id'] = $this->Auth->user('id'); // Adicionada essa linha
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('Your post has been saved.');
                 $this->redirect(array('action' => 'index'));
@@ -31,6 +32,22 @@ class PostsController extends AppController {
     }
     function edit(){
 
+    }
+
+    public $components = array(
+        'Flash',
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+            'authorize' => array('Controller') // Adicionamos essa linha
+        )
+    );
+    
+    public function isAuthorized($user) {
+        if (isset($user['role']) && $user['role'] === 'admin') {
+            return true; // Admin pode acessar todas actions
+        }
+        return false; // Os outros usuários não podem
     }
 
 }
