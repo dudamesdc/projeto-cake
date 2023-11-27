@@ -22,14 +22,21 @@ class PostsController extends AppController {
     }
 
     function delete($id) {
+        
         if (!$this->request->is('post')) {
             throw new MethodNotAllowedException();
         }
-        if ($this->Post->delete($id)) {
-            $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-            $this->redirect(array('action' => 'index'));
+        
+        if (!$this->Auth->user()) {
+            
+            if ($this->Post->delete($id)) {
+                  
+                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
+                $this->redirect(array('action' => 'index'));
+            }
         }
-    }
+        $this->Flash->error('The post with id: ' . $id . ' could not be deleted.');    
+    }   
     function edit(){
 
     }
@@ -48,6 +55,10 @@ class PostsController extends AppController {
             return true; // Admin pode acessar todas actions
         }
         return false; // Os outros usuários não podem
+    }
+
+    public function beforeFilter() {
+        $this->Auth->allow('index', 'view');
     }
 
 }

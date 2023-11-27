@@ -1,9 +1,10 @@
 <?php
-class UsersController extends AppController {
-    
-    
-    
-    
+class UsersController extends AppController
+{
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('add', 'logout');
+    }
 
     public function index() {
         $this->User->recursive = 0;
@@ -62,12 +63,6 @@ class UsersController extends AppController {
         $this->Flash->error(__('User was not deleted'));
         $this->redirect(array('action' => 'index'));
     }
-
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('add'); // Permitindo que os usuários se registrem
-    }
-    
     public function login() {
         if ($this->Auth->login()) {
             $this->redirect($this->Auth->redirect());
@@ -79,4 +74,6 @@ class UsersController extends AppController {
     public function logout() {
         $this->redirect($this->Auth->logout());
     }
+    
+
 }
