@@ -1,6 +1,6 @@
 <h1>Blog posts</h1>
 <p><?php echo $this->Html->link("Add Post", array('action' => 'add')); ?></p>
-<table>
+<table><p><?php echo $this->Html->link("login", array('controller'=> 'Users','action' => 'login')); ?></p>
     <tr>
         <th>Id</th>
         <th>Title</th>

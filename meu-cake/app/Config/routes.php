@@ -42,3 +42,6 @@ Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
  * the built-in default routes.
  */
 	require CAKE . 'Config' . DS . 'routes.php';
+
+
+Router::connect('/login', ['controller' => 'Users', 'action' => 'login']);
