@@ -29,5 +29,6 @@ class User extends AppModel {
         }
         return true;
     }
+    $this->set('User',$
 
 }
