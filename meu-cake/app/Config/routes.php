@@ -45,3 +45,4 @@ Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 
 
 Router::connect('/login', ['controller' => 'Users', 'action' => 'login']);
+Router::connect('/users', ['controller' => 'Posts', 'action' => 'index']);

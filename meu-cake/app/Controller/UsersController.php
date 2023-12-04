@@ -4,8 +4,33 @@ class UsersController extends AppController
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'logout');
+        $components = array(
+            'Flash',
+            'Auth' => array(
+                'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+                'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+                'authorize' => array('Controller') // Adicionamos essa linha
+            )
+        );   
     }
 
+    public function isAuthorized($user) {
+        // Todos os usuários registrados podem adicionar posts
+        if ($this->action === 'view'|| $this->action === 'index') {
+            return true;
+        }
+        // O proprietário do post pode editá-lo e excluí-lo
+        if ($this -> action === 'edit' || $this -> action === 'delete' || $this -> action === 'add') {
+            $postId = (int) $this->request->params['pass'][0];
+            if ( $user['id']===$postId) {
+                return true;
+            }else{
+                $this->Flash->error(__('Você não tem permissão para editar esse post.'));
+                return $this->redirect(array('action' => 'index'));
+            }
+        }
+        return parent::isAuthorized($user);
+    }
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
@@ -19,16 +44,23 @@ class UsersController extends AppController
     }
 
     public function add() {
+        
         if ($this->request->is('post')) {
             $this->User->create();
-            if ($this->User->save($this->request->data)) {
+            $exist = $this->User->findByUsername($this->request->data['User']['username']);
+            if($exist){
+                $this->Flash->error(__('Usuário já existe'));
+            }    
+            else if ($this->User->save($this->request->data)) {
                 $this->Flash->success(__('The user has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('controller'=>'posts','url' => 'index'));
             } else {
+                
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
         }
     }
+    
 
     public function edit($id = null) {
         $this->User->id = $id;

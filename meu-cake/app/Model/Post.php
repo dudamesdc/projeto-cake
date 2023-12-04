@@ -1,13 +1,17 @@
 <?php
 class Post extends AppModel {
     public $name = 'Post';
+    public $belongsTo = array('User'=>array(
+        'className' => 'User',
+        'foreignKey' => 'user_id'
+    ));
 
     public $validate = array(
         'title' => array(
-            'rule' => 'notEmpty'
+            'rule' => 'notBlank'
         ),
         'body' => array(
-            'rule' => 'notEmpty'
+            'rule' => 'notBlank'
         )
     );
 
@@ -19,7 +23,7 @@ class Post extends AppModel {
             $this->Post->create();
             if ($this->Post->save($this->request->data)){
                 $this->Flash->success(__('The post has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('url' => 'index'));
             } else {
                 $this->Flash->error(__('The post could not be saved. Please, try again.'));
             }
