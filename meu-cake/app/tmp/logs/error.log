@@ -3671,3 +3671,32 @@ Request URL: /index
 Stack Trace:
 #0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2023-12-05 15:25:35 Error: [MissingControllerException] Controller class IndexController could not be found.
+Exception Attributes: array (
+  'class' => 'IndexController',
+  'plugin' => NULL,
+)
+Request URL: /index
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-05 15:59:14 Error: [MissingTableException] Table users for model User was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'users',
+  'class' => 'User',
+  'ds' => 'default',
+)
+Request URL: /users/
+Stack Trace:
+#0 /var/www/html/lib/Cake/Model/Model.php(3686): Model->setSource('users')
+#1 /var/www/html/lib/Cake/Model/Model.php(3053): Model->getDataSource()
+#2 /var/www/html/lib/Cake/Model/Model.php(3025): Model->_readDataSource('all', Array)
+#3 /var/www/html/lib/Cake/Controller/Component/PaginatorComponent.php(212): Model->find('all', Array)
+#4 /var/www/html/lib/Cake/Controller/Controller.php(1107): PaginatorComponent->paginate(Object(User), Array, Array)
+#5 /var/www/html/app/Controller/UsersController.php(36): Controller->paginate()
+#6 [internal function]: UsersController->index()
+#7 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
