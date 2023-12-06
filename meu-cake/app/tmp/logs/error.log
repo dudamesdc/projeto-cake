@@ -3700,3 +3700,1287 @@ Stack Trace:
 #9 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #10 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #11 {main}
+2023-12-06 10:53:00 Error: [MissingTableException] Table users for model User was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'users',
+  'class' => 'User',
+  'ds' => 'default',
+)
+Request URL: /users/
+Stack Trace:
+#0 /var/www/html/lib/Cake/Model/Model.php(3686): Model->setSource('users')
+#1 /var/www/html/lib/Cake/Model/Model.php(3053): Model->getDataSource()
+#2 /var/www/html/lib/Cake/Model/Model.php(3025): Model->_readDataSource('all', Array)
+#3 /var/www/html/lib/Cake/Controller/Component/PaginatorComponent.php(212): Model->find('all', Array)
+#4 /var/www/html/lib/Cake/Controller/Controller.php(1107): PaginatorComponent->paginate(Object(User), Array, Array)
+#5 /var/www/html/app/Controller/UsersController.php(36): Controller->paginate()
+#6 [internal function]: UsersController->index()
+#7 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#10 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2023-12-06 10:53:19 Error: [MissingTableException] Table posts for model Post was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'posts',
+  'class' => 'Post',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Model/Model.php(3686): Model->setSource('posts')
+#1 /var/www/html/lib/Cake/Model/Model.php(3053): Model->getDataSource()
+#2 /var/www/html/lib/Cake/Model/Model.php(3025): Model->_readDataSource('all', Array)
+#3 /var/www/html/app/Controller/PostsController.php(42): Model->find('all', Array)
+#4 [internal function]: PostsController->index()
+#5 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-06 11:00:49 Error: [MissingControllerException] Controller class Login.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Login.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /login.html
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-06 11:00:55 Error: [MissingControllerException] Controller class Signup.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Signup.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /signup.html
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-06 11:01:17 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-06 11:01:32 Error: [MissingControllerException] Controller class AddController could not be found.
+Exception Attributes: array (
+  'class' => 'AddController',
+  'plugin' => NULL,
+)
+Request URL: /add
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-06 11:14:01 Error: [ParseError] syntax error, unexpected '>'
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#1 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#2 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-12-06 11:14:41 Error: [ParseError] syntax error, unexpected '>'
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#1 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#2 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-12-06 11:14:54 Error: [ArgumentCountError] Too few arguments to function View::start(), 0 passed in /var/www/html/app/View/Posts/index.ctp on line 28 and exactly 1 expected
+Request URL: /
+Stack Trace:
+#0 /var/www/html/app/View/Posts/index.ctp(28): View->start()
+#1 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#2 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#3 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#7 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2023-12-06 11:15:57 Error: [MissingControllerException] Controller class UsesrsController could not be found.
+Exception Attributes: array (
+  'class' => 'UsesrsController',
+  'plugin' => NULL,
+)
+Request URL: /usesrs
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-06 12:43:47 Error: [ParseError] syntax error, unexpected 'public' (T_PUBLIC)
+Request URL: /Users/login
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-12-06 12:59:32 Error: [MissingActionException] Action UsersController::admin_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'admin_index',
+)
+Request URL: /Users/admin_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-06 13:07:08 Error: [Error] Call to a member function find() on null
+Request URL: /Users/admin_index
+Stack Trace:
+#0 [internal function]: UsersController->admin_index()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:20:36 Error: [Error] Call to a member function find() on null
+Request URL: /Users/admin_index
+Stack Trace:
+#0 [internal function]: UsersController->admin_index()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:23:07 Error: [ParseError] syntax error, unexpected '$this' (T_VARIABLE), expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /Users/admin_index
+Stack Trace:
+#0 [internal function]: App::load('UsersController')
+#1 [internal function]: spl_autoload_call('UsersController')
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-12-06 13:28:02 Error: [MissingActionException] Action UsersController::deleteUser() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'deleteUser',
+)
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-06 13:28:30 Error: [Error] Call to a member function delete() on null
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 [internal function]: UsersController->deleteUser('2')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:29:18 Error: [Error] Call to a member function delete() on null
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 [internal function]: UsersController->deleteUser('2')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:29:59 Error: [Error] Call to a member function delete() on null
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 [internal function]: UsersController->deleteUser('2')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:31:38 Error: [MissingViewException] View file "Users/delete_user.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/delete_user.ctp',
+)
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(470): View->_getViewFileName('Users/delete_us...')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:33:10 Error: [MissingViewException] View file "Users/delete_user.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/delete_user.ctp',
+)
+Request URL: /Users/deleteUser/2
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(470): View->_getViewFileName('Users/delete_us...')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-06 13:56:46 Error: [MissingActionException] Action UsersController::user_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'user_index',
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-06 13:59:24 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(25): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:03:47 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(25): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:03:48 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(25): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:03:48 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(25): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:38 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:04:43 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:50 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:51 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:51 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:51 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:51 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:52 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:52 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:53 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:53 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:06:53 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:09 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:10 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:10 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:11 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:15 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:15 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:15 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:16 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:09:16 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:37 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:38 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:38 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:39 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:10:40 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:14:12 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:15:59 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:16:37 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:18:18 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(19): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:25 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:26 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:26 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:26 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:27 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:27 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:28 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:20:28 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:22:47 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(24): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:22:48 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(24): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:23:52 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(24): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:24:21 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /Users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:32:38 Error: [MissingHelperException] Helper class ArrayHelper could not be found.
+Exception Attributes: array (
+  'class' => 'ArrayHelper',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Array')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('Array')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('Array')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:32:57 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:35:08 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 14:35:09 Error: [MissingHelperException] Helper class userHelper could not be found.
+Exception Attributes: array (
+  'class' => 'userHelper',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('user')
+#1 /var/www/html/lib/Cake/View/View.php(858): HelperCollection->__isset('user')
+#2 /var/www/html/app/View/Users/user_index.ctp(20): View->__get('user')
+#3 /var/www/html/lib/Cake/View/View.php(971): include('/var/www/html/a...')
+#4 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#5 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#6 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#9 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2023-12-06 17:17:11 Error: [ParseError] syntax error, unexpected '']));' (T_ENCAPSED_AND_WHITESPACE), expecting ',' or ';'
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#1 /var/www/html/lib/Cake/View/View.php(473): View->_render('/var/www/html/a...')
+#2 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2023-12-06 17:17:53 Error: [MissingActionException] Action PostsController::dashboard() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'dashboard',
+)
+Request URL: /posts/dashboard
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

@@ -1,6 +1,7 @@
 <?php
 class UsersController extends AppController
 {
+    public $helpers = array ('Html','Form');
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add', 'logout');
@@ -52,11 +53,18 @@ class UsersController extends AppController
                 $this->Flash->error(__('Usuário já existe'));
             }    
             else if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('The user has been saved'));
-                $this->redirect(array('controller'=>'posts','url' => 'index'));
+                $role=$this->request->data('User.role');
+                if($role=='admin'){
+                    $this->Flash->success(__('Usuário cadastrado com sucesso'));
+                    $this->redirect(array('url' => 'admin_index'));
+                
+                }
+                $this->Flash->success(__('Usuário cadastrado com sucesso'));
+                $this->redirect(array('url' => 'user_index'));
             } else {
                 
-                $this->Flash->error(__('The user could not be saved. Please, try again.'));
+                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
+                $this->redirect(array('controller'=>'posts','url' => 'index'));
             }
         }
     }
@@ -96,16 +104,50 @@ class UsersController extends AppController
         $this->redirect(array('action' => 'index'));
     }
     public function login() {
-        if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
-        } else {
-            $this->Flash->error(__('Invalid username or password, try again'));
+        if ($this->request->is('post')){
+            if ($this->Auth->login()) {
+                $role=$this->Auth->user('role');
+                    if($role=='admin'){
+                    
+                        $this->redirect(array('action' => 'admin_index'));
+                
+                    }
+                    
+                    $this->redirect((['action' => 'user_index']));
+            } else {
+                
+                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
+                $this->redirect(array('controller'=>'posts','url' => 'index'));
+            }
+                
+             
+                $this->Flash->error(__('Usuário ou senha inválidos, tente novamente'));
+            
         }
     }
     
     public function logout() {
         $this->redirect($this->Auth->logout());
     }
+    public function admin_index(){
+        $this->loadModel('Post');
+        $this->set('admin', $this->Auth->user());
+        $this->set('posts', $this->Post->find('all'));
+    }
+    public function deleteUser($id= null){
+        if($this->request->is('post')){
+            if ($this->User->delete()) {
+                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
+                $this->redirect(array('controller'=>'users','action' => 'index'));
+            }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
+            return $this->redirect(array('controller'=>'users','action' => 'admin_index'));
+        }
+    } 
+    public function user_index(){
+        $this->set('user', $this->Auth->user());
+        $this->loadModel('Post');
+        $this->set('posts', $this->Post->find('all', array('conditions' => array('Post.user_id' => $this->Auth->user('id')))));
+    } 
     
 
 }

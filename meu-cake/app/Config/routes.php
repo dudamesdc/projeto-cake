@@ -45,4 +45,11 @@ Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 
 
 Router::connect('/login', ['controller' => 'Users', 'action' => 'login']);
-Router::connect('/users', ['controller' => 'Posts', 'action' => 'index']);
+Router::connect('/users', ['controller' => 'Posts', 'url' => 'index']);
+
+Router::connect('/admin', ['controller' => 'Users', 'action' => 'admin_index']);
+Router::connect('/user', ['controller' => 'Users', 'action' => 'user_index']);
+Router::connect('/admin/login', ['controller' => 'Users', 'action' => 'admin_index']);
+Router::connect('/user/login', ['controller' => 'Users', 'action' => 'user_index']);
+Router::connect('/admin/add', ['controller' => 'Users', 'action' => 'admin_index']);
+Router::connect('/user/add', ['controller' => 'Users', 'action' => 'user_index']);
