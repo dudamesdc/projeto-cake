@@ -4,7 +4,7 @@ class UsersController extends AppController
     public $helpers = array ('Html','Form');
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('add', 'logout');
+        $this->Auth->allow('add', 'logout','dashboard');
         $components = array(
             'Flash',
             'Auth' => array(
@@ -45,22 +45,23 @@ class UsersController extends AppController
     }
 
     public function add() {
-        
+        $this->loadModel('Profile');
         if ($this->request->is('post')) {
+            
             $this->User->create();
-            $exist = $this->User->findByUsername($this->request->data['User']['username']);
+            $exist = $this->User->findByCpf($this->request->data['Profile']['cpf']);
             if($exist){
                 $this->Flash->error(__('Usuário já existe'));
             }    
             else if ($this->User->save($this->request->data)) {
                 $role=$this->request->data('User.role');
                 if($role=='admin'){
-                    $this->Flash->success(__('Usuário cadastrado com sucesso'));
-                    $this->redirect(array('url' => 'admin_index'));
+                    $this->Flash->success(__('admin cadastrado com sucesso'));
+                    $this->redirect(array('action' => 'admin_index'));
                 
                 }
                 $this->Flash->success(__('Usuário cadastrado com sucesso'));
-                $this->redirect(array('url' => 'user_index'));
+                $this->redirect(array('action' => 'user_index'));
             } else {
                 
                 $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
@@ -127,7 +128,8 @@ class UsersController extends AppController
     }
     
     public function logout() {
-        $this->redirect($this->Auth->logout());
+        $this->Auth->logout();
+        $this->redirect(array('controller'=>'posts','action' => 'index'));
     }
     public function admin_index(){
         $this->loadModel('Post');
@@ -144,9 +146,10 @@ class UsersController extends AppController
         }
     } 
     public function user_index(){
-        $this->set('user', $this->Auth->user());
+        
         $this->loadModel('Post');
-        $this->set('posts', $this->Post->find('all', array('conditions' => array('Post.user_id' => $this->Auth->user('id')))));
+        $this->set('posts', $this->Post->find('all', array('contain'=>array('User'),'conditions' => array('Post.user_id' => $this->Auth->user('id')))));
+        $this->set('user', $this->Auth->user());
     } 
     
 

@@ -21,7 +21,11 @@
                     </thead>
                     
                     <tbody>
-                        <?php foreach ($posts as $post): ?>
+
+                        <?php 
+                        
+                        foreach ($posts as $post): ?>
+                            
                             <tr>
                                 
                                 <td><?php echo $post['User']['username']; ?></td>
@@ -30,6 +34,7 @@
                                 </td>
                                 <td><?php echo $post['Post']['created']; ?></td>
                             </tr>
+                            
                         <?php endforeach; ?>
                     </tbody>
                 </table>

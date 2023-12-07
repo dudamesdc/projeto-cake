@@ -11,7 +11,7 @@ class PostsController extends AppController {
             $this->Auth->allow(['index', 'view','add','edit','delete','dashboard','filter']);
         }
             
-        $this->Auth->allow(['index', 'view']);
+        $this->Auth->allow(['index', 'view','dashboard']);
 
         
 
@@ -30,16 +30,18 @@ class PostsController extends AppController {
     }
 
     public function add() {
+        
         if ($this->request->is('post')) {
-            echo $this->Html->link('Logout', ([ 'action' => 'logout'])); 
+            $this->request->data['Post']['user_id']=$this->Auth->user('id');
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('Seu post foi adicionado.');
-                $this->redirect(array('action' => 'index'));
-            }
+                $this->redirect(array('controller'=>'Users','action' => 'user_index'));
             $this->Flash->error('Não foi possível adicionar seu post.');
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(array('controller'=>'Users','action' => 'user_index'));
+            }
+        
         }
-       
+        $this->Flash->error('Não foi possível adicionar seu post.');
     }
 
     function delete($id) {
@@ -103,16 +105,20 @@ class PostsController extends AppController {
             $conditions['Post.created >='] = $datai;
             }
         
-            if (is_array($Filter) && !empty($Filter['end'])) {
+            if (!empty($Filter['end'])) {
             $dataf = date('Y-m-d', strtotime(implode('-', $Filter['end'])));
             $conditions['Post.modified <='] = $dataf;
+            }
+            if(!empty($Filter['status'])){
+                $conditions['Post.status'] = $Filter['status'];
             }
         }
 
         
     }
     public function dashboard(){
-        $this->set('posts', $this->Post->find('all'));
+        $this->set('posts', $this->Post->find('all', array('contain'=>array('User'))));
+        
     }
     
 }

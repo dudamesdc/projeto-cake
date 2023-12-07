@@ -11,7 +11,7 @@ class User extends AppModel {
         ),
         'password' => array(
             'required' => array(
-                'rule' => array('notBLank'),
+                'rule' => array('notBlank'),
                 'message' => 'A password is required'
             )
         ),
@@ -21,14 +21,34 @@ class User extends AppModel {
                 'message' => 'Please enter a valid role',
                 'allowEmpty' => false
             )
+        ),
+        'name'=>array(
+            'notBlank'=>array(
+                'rule'=>array('custom','/^[a-zA-Z\s]*$/'),
+                'message'=>'Nome é obrigatório'
+            ),
+        ),
+         'cpf'=>array(
+            'notBlank'=>array( 
+                'rule'=>array('custom','/^[0-9]{11}$/'),
+                'message'=>'cpf é obrigatório'
+            )
         )
     );
+    
     public function beforeSave($options = array()) {
         if (isset($this->data[$this->alias]['password'])) {
             $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
         }
         return true;
     }
+    
+    public $hasMany=array(
+        'Post'=>array(
+            'className'=>'Post',
+            'foreignKey'=>'user_id'
+        )
+    );
     
 
 }

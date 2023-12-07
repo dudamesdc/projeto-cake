@@ -51,5 +51,5 @@ Router::connect('/admin', ['controller' => 'Users', 'action' => 'admin_index']);
 Router::connect('/user', ['controller' => 'Users', 'action' => 'user_index']);
 Router::connect('/admin/login', ['controller' => 'Users', 'action' => 'admin_index']);
 Router::connect('/user/login', ['controller' => 'Users', 'action' => 'user_index']);
-Router::connect('/admin/add', ['controller' => 'Users', 'action' => 'admin_index']);
-Router::connect('/user/add', ['controller' => 'Users', 'action' => 'user_index']);
+Router::connect('/admin/add', ['controller' => 'Posts', 'action' => 'add']);
+Router::connect('/user/add', ['controller' => 'Posts', 'action' => 'add']);
