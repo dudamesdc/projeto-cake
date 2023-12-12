@@ -1,33 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .navbar {
-    border-radius: 0;
-    background-color: aqua;
-    color: #fff;
+    background-color: #004AAD;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.branco {
+    color: black;
+}
+
+.logo {
+    text-align: center;
+}
+
+.menu a, .menu a:visited {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.menu a:hover {
+    color: black;
+    padding: 1px 1px;
 }
 
 .container {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    width: 920px;
+    margin: 0 auto;
+}
+
+.content {
+    width: 660px;
+    float: left;
+}
+
+.barra-lateral {
+    width: 240px;
+    float: right;
+}
+
+.conteudo-lateral {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.conteudo-lateral h3 {
+    background-color: #004AAD;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.post-lateral {
+    font-size: 0.8em;
+    padding: 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.post-lateral:last-child {
+    border-bottom: none;
+}
+
+.content .post {
     padding: 20px;
+    background-color: white;
+    margin-bottom: 15px;
 }
 
-.panel {
-    margin-bottom: 20px;
+h2 {
+    color: #004AAD;
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #004AAD;
+}
+
+.content .post p {
+    margin: 10px 0;
+}
+
+footer {
+    clear: both;
+    background-color: #004AAD;
+    padding: 15px;
+}
+
+footer p {
+    color: white;
     text-align: center;
-}
-.panel-body {
-    padding: 0;
-    color:aqua;
-    background-color: #fff;
 }

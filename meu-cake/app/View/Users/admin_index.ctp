@@ -5,7 +5,7 @@
     olá <?php echo $admin['username']  ?>
 </p>
 <?php echo $this->Html->link('Add Post', ['action' => 'add']); ?>
-<?php echo $this->Html->link('logout', ['controller' => 'Users', 'action' => 'add']); ?> 
+<?php echo $this->Html->link('logout', ['controller' => 'Users', 'action' => 'logout']); ?> 
 
 
 <div class="row">

@@ -19,8 +19,8 @@ class PostsController extends AppController {
     
     function index() {
         
-        $posts=$this->Post->find('all',array('countain'=>'User'));
-        $this->set('posts', $posts);
+        $this->set('posts', $this->Post->find('all', array('contain'=>array('User'))));
+        
         
 
     }
@@ -31,30 +31,39 @@ class PostsController extends AppController {
 
     public function add() {
         
-        if ($this->request->is('post')) {
-            $this->request->data['Post']['user_id']=$this->Auth->user('id');
+        if ($this->request->is('post' )) {
+            $this->request->data['Post']['user_id'] = $this->Auth->user('id');
+    
+            // Verifica se 'is_active' está definido e é diferente de '0'
+            if (isset($this->request->data['Post']['is_active']) && $this->request->data['Post']['is_active'] !== '0') {
+                $this->request->data['Post']['status'] = true;
+            } else {
+                $this->request->data['Post']['status'] = false;
+            }
+    
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('Seu post foi adicionado.');
-                $this->redirect(array('controller'=>'Users','action' => 'user_index'));
-            $this->Flash->error('Não foi possível adicionar seu post.');
-            $this->redirect(array('controller'=>'Users','action' => 'user_index'));
+                $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
+            } else {
+                $this->Flash->error('Não foi possível adicionar seu post.');
+                $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
-        
         }
-        $this->Flash->error('Não foi possível adicionar seu post.');
+    
+        
     }
-
+    
     function delete($id) {
         
-        if (!$this->request->is('post')) {
+        if ($this->request->is('post')) {
             throw new MethodNotAllowedException();
         }else{
         
             if ($this->Post->delete($id)) {
                 $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(['controller'=>'Users','action' => 'user_index']);
             }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(['controller'=>'Users','action' => 'user_index']);
         }
     }   
     function edit(){

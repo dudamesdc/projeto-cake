@@ -1,23 +1,12 @@
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Blog</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Sign Up</a></li>
-                </ul>
-            </div>
+
+<div class="navbar ">
+        <div class="logo">
+            <h1><span class="branco">Tecno</span>-blog</h1>
         </div>
-    </nav>
+        <div class="nav nav-tabs nav-pills">
+            <?php echo $this->Html->link('Home', ['controller' => 'Posts', 'action' => 'index'], ['class' => 'active']) ?>
+            <?php echo  $this->Html->link('login', ['controller' => 'Users', 'action' => 'login'], ['class' => 'btn btn-primary']) ?>
+            <?php echo  $this->Html->link('sign up', ['controller' => 'Users', 'action' => 'add'], ['class' => 'btn btn-primary']) ?>
+        </div>
+    </div>
