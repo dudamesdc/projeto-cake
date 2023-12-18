@@ -2,36 +2,9 @@
 class UsersController extends AppController
 {
     public $helpers = array ('Html','Form');
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('add', 'logout','dashboard');
-        $components = array(
-            'Flash',
-            'Auth' => array(
-                'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
-                'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
-                'authorize' => array('Controller') // Adicionamos essa linha
-            )
-        );   
-    }
-
-    public function isAuthorized($user) {
-        // Todos os usuários registrados podem adicionar posts
-        if ($this->action === 'view'|| $this->action === 'index') {
-            return true;
-        }
-        // O proprietário do post pode editá-lo e excluí-lo
-        if ($this -> action === 'edit' || $this -> action === 'delete' || $this -> action === 'add') {
-            $postId = (int) $this->request->params['pass'][0];
-            if ( $user['id']===$postId) {
-                return true;
-            }else{
-                $this->Flash->error(__('Você não tem permissão para editar esse post.'));
-                return $this->redirect(array('action' => 'index'));
-            }
-        }
-        return parent::isAuthorized($user);
-    }
+    
+    
+    
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
@@ -45,22 +18,18 @@ class UsersController extends AppController
     }
 
     public function add() {
-        $this->loadModel('Profile');
+        
         if ($this->request->is('post')) {
             
             $this->User->create();
-            $exist = $this->User->findByCpf($this->request->data['Profile']['cpf']);
-            if($exist){
-                $this->Flash->error(__('Usuário já existe'));
-            }    
-            else if ($this->User->save($this->request->data)) {
+             if ($this->User->save($this->request->data)) {
                 $role=$this->request->data('User.role');
                 if($role=='admin'){
                     $this->Flash->success(__('admin cadastrado com sucesso'));
                     $this->redirect(array('action' => 'admin_index'));
                 
                 }
-                $this->Flash->success(__('Usuário cadastrado com sucesso'));
+                $this->Flash->error(__('Erro ao cadastrar o administador'));
                 $this->redirect(array('action' => 'user_index'));
             } else {
                 
@@ -134,6 +103,7 @@ class UsersController extends AppController
     public function admin_index(){
         $this->loadModel('Post');
         $this->set('admin', $this->Auth->user());
+        $this->set('users', $this->User->find('all'));
         $this->set('posts', $this->Post->find('all'));
     }
     public function deleteUser($id= null){

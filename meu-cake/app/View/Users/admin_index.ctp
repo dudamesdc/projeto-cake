@@ -1,59 +1,53 @@
 
 
-<h1>portal do administrador</h1>
-<p>
-    olá <?php echo $admin['username']  ?>
-</p>
-<?php echo $this->Html->link('Add Post', ['action' => 'add']); ?>
-<?php echo $this->Html->link('logout', ['controller' => 'Users', 'action' => 'logout']); ?> 
-
-
-<div class="row">
-    <div class="col-md-8">
-        <h2>Posts Recentes</h2>
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Criador</th>
-                            <th>Título</th>
-                            <th>Ação</th>
-                            <th>Criado em</th>
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <?php foreach ($posts as $post): ?>
-                            <tr>
-                            <td>
-                                    <?php
-                                    echo $this->Form->postLink(
-                                        'Delete user',
-                                        ['action' => 'deleteUser', $post['Post']['id']],
-                                        ['confirm' => 'Are you sure?']
-                                    );?>
-                                </td>
-                                <td><?php echo $post['User']['username']; ?></td>
-                                <td>
-                                    <?php echo $this->Html->link($post['Post']['title'], ['action' => 'view', $post['Post']['id']]); ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    echo $this->Form->postLink(
-                                        'Delete',
-                                        ['action' => 'delete', $post['Post']['id']],
-                                        ['confirm' => 'Are you sure?']
-                                    );
-                                    echo $this->Html->link('Edit', ['action' => 'edit', $post['Post']['id']]);
-                                    ?>
-                                </td>
-                                <td><?php echo $post['Post']['created']; ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div class="container">
+  <!-- Perfil do Administrador -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Perfil do Administrador</h3>
     </div>
+    <div class="panel-body">
+      <!-- Informações do Administrador -->
+      <h4>Nome do Administrador: João Silva</h4>
+      <h4>Email: joao.admin@example.com</h4>
+
+      <!-- Abas de Navegação para Usuários e Perfil -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
+        <li><a data-toggle="tab" href="#view-profile">Ver Perfil</a></li>
+        
+      </ul>
+
+      <!-- Conteúdo das Abas -->
+      <div class="tab-content">
+        <!-- Conteúdo da Aba "Usuários" -->
+        <div id="view-users" class="tab-pane fade in active">
+          <!-- Campo de Pesquisa de Usuários -->
+          <div class="form-group">
+            <label for="userSearch">Pesquisar Usuário:</label>
+            <input type="text" class="form-control" id="userSearch">
+          </div>
+
+          <!-- Lista de Usuários com Indicação de Ativo -->
+          <ul class="list-group">
+           
+            <?php foreach ($users as $user): ?>
+            <li class="list-group-item"><span class="active-indicator"></span><?php echo $this->Html->link($user['User']['username'],['controller'=>'Posts','action'=>'view', $user['User']['id']])?></li>
+            
+            <?php endforeach; ?>
+            
+          </ul>
+        </div>
+
+        
+        <div id="view-profile" class="tab-pane fade">
+       
+          <p>Informações do perfil do administrador...</p>
+        </div>
+
+        
+      
+
+    </div>
+  </div>
 </div>

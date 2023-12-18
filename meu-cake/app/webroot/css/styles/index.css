@@ -1,102 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Trebuchet MS', sans-serif;
-}
+    background-color: #f8f8f8; /* Fundo branco suave */
+    padding-top: 20px; /* Espaçamento superior */
+  }
 
-.navbar {
-    background-color: #004AAD;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+  /* Estilos para a barra de navegação */
+  .navbar {
+    background-color: #001f3f; /* Azul marinho escuro para a barra de navegação */
+    border-color: #001f3f;
+    border-radius: 0; /* Borda sem arredondamento */
+    margin-bottom: 20px; /* Espaçamento inferior */
+  }
 
-.branco {
-    color: black;
-}
+  .navbar-brand {
+    color: #ffffff; /* Texto branco para a marca */
+    font-size: 24px; /* Tamanho da fonte do logotipo */
+  }
 
-.logo {
-    text-align: center;
-}
+  .navbar-toggle {
+    border: 1px solid #ffffff; /* Ícones brancos para o botão de alternância */
+  }
 
-.menu a, .menu a:visited {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
+  .navbar-collapse {
+    padding: 10px; /* Espaçamento interno ao menu de navegação para melhorar a legibilidade */
+  }
 
-.menu a:hover {
-    color: black;
-    padding: 1px 1px;
-}
+  /* Estilos para o formulário de filtro */
+  .form-inline {
+    margin-bottom: 20px; /* Espaçamento inferior para o formulário */
+  }
 
-.container {
-    width: 920px;
-    margin: 0 auto;
-}
+  .form-group {
+    margin-right: 10px; /* Espaçamento direito entre os elementos do formulário */
+  }
 
-.content {
-    width: 660px;
-    float: left;
-}
+  .form-control {
+    border-color: #ccc;
+  }
 
-.barra-lateral {
-    width: 240px;
-    float: right;
-}
+  .btn-primary {
+    background-color: #001f3f; /* Azul primário para botões */
+    border-color: #001f3f;
+  }
 
-.conteudo-lateral {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-}
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #001f3f;
+    border-color: #ccc;
+  }
 
-.conteudo-lateral h3 {
-    background-color: #004AAD;
-    color: white;
-    margin-bottom: 5px;
-}
+  /* Estilos para a tabela e os painéis */
+  .table {
+    margin-top: 20px; /* Espaçamento superior para a tabela */
+    margin-bottom: 20px; /* Espaçamento inferior para a tabela */
+  }
 
-.post-lateral {
-    font-size: 0.8em;
-    padding: 5px;
-    border-bottom: 1px solid lightgrey;
-}
+  .panel {
+    border: 1px solid #ddd; /* Borda cinza para o painel */
+    border-radius: 0; /* Borda sem arredondamento */
+    margin-top: 20px; /* Espaçamento superior para o painel */
+  }
 
-.post-lateral:last-child {
-    border-bottom: none;
-}
+  .panel-heading {
+    background-color: #001f3f; /* Fundo azul marinho para o cabeçalho do painel */
+    color: #ffffff; /* Texto branco para o cabeçalho do painel */
+  }
 
-.content .post {
-    padding: 20px;
-    background-color: white;
-    margin-bottom: 15px;
-}
+  .panel-title {
+    color: #ffffff; /* Texto branco para o título do painel */
+  }
 
-h2 {
-    color: #004AAD;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #004AAD;
-}
-
-.content .post p {
-    margin: 10px 0;
-}
-
-footer {
-    clear: both;
-    background-color: #004AAD;
-    padding: 15px;
-}
-
-footer p {
-    color: white;
-    text-align: center;
-}
+  .panel-body {
+    background-color: #ffffff; /* Fundo branco para o corpo do painel */
+  }

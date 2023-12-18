@@ -1,29 +1,33 @@
 <!-- default.ctp -->
 <!DOCTYPE html>
-<html>
-	
+<html lang="en">
 <head>
-<?php
-echo $this->Html->css('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
-echo $this->Html->script('https://code.jquery.com/jquery-3.3.1.slim.min.js');
-echo $this->Html->script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
-echo $this->Html->script('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
-echo  $this->Html->css('styles/index.css');
-?>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Seu Blog</title>
+  <link rel="stylesheet" href="/css/styles/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title><?php echo $this->fetch('title'); ?></title>
+</head>
+
 
     
-    <title><?php echo $this->fetch('title'); ?></title>
-    <link rel="stylesheet" href="meu-cake/app/webroot/css/styles/index.css">
-</head>
+    
+
+
 <body>
-    <div id="container">
+    <nav>
         <div>
-            <?php $this->element('navbar'); ?>
+            <?php echo $this->element('navbar'); ?>
         </div>
-        <div id="content">
+    </nav>  
+        
             <?php echo $this->Flash->render(); ?>
+            
             <?php echo $this->fetch('content'); ?>
-        </div>
+        
         <div>
             <?php $this->element('footer'); ?>
         </div>

@@ -22,16 +22,17 @@ class User extends AppModel {
                 'allowEmpty' => false
             )
         ),
-        'name'=>array(
-            'notBlank'=>array(
-                'rule'=>array('custom','/^[a-zA-Z\s]*$/'),
-                'message'=>'Nome é obrigatório'
-            ),
+        'email' => array(
+            'required' => array(
+                'rule' => array('notBlank'),
+                'message' => 'A email is required'
+                
+            )
         ),
-         'cpf'=>array(
-            'notBlank'=>array( 
-                'rule'=>array('custom','/^[0-9]{11}$/'),
-                'message'=>'cpf é obrigatório'
+        'cpf' => array(
+            'required' => array(
+                'rule' => array('notBlank'),
+                'message' => 'A cpf is required'
             )
         )
     );
