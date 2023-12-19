@@ -1,34 +1,40 @@
 
 
 
+
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-body">
-            <form class="form-inline">
-                <?php echo $this->Form->create('Post', ['type' => 'post', 'url' => ['controller' => 'posts', 'action' => 'index']]);?>
+            <form class="form-inline" method="post" action="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>">
+                <?php echo $this->Form->create('Post', ['type' => 'post']); ?>
                 <div class="form-group">
-                    <?php echo $this->Form->input('content', ['class' => 'form-control', 'placeholder' => 'Digite o título', 'type' => 'text', 'label' => 'Título/Conteúdo']);?>
-                  </div>
-
-                  <div class="form-group">
-                    <?php echo $this->Form->input('create', ['class' => 'form-control', 'placeholder' => 'Digite a data inicial', 'type' => 'date', 'label' => 'Data Inicial']);?>
+                    <?php echo $this->Form->input('content', ['class' => 'form-control', 'placeholder' => 'Digite o título', 'type' => 'text', 'label' => 'Título/Conteúdo']); ?>
                 </div>
 
                 <div class="form-group">
-                    <?php echo $this->Form->input('end', ['class' => 'form-control', 'placeholder' => 'Digite a data final', 'type' => 'date', 'label' => 'Data Final']);?>
+                    <?php echo $this->Form->input('create', ['class' => 'form-control', 'placeholder' => 'Digite a data inicial', 'type' => 'date', 'label' => 'Data Inicial', 'empty'=>true]); ?>
                 </div>
 
                 <div class="form-group">
-                    <?php echo $this->Form->select('is_active', ['class' => 'form-control', 'options' => ['1' => 'Ativo', '0' => 'Inativo'], 'label' => 'Status']);?>
+                    <?php echo $this->Form->input('end', ['class' => 'form-control', 'placeholder' => 'Digite a data final', 'type' => 'date', 'label' => 'Data Final','empty'=>true]); ?>
                 </div>
+
+                <div class="form-group">
                     <?php
-                    echo $this->Form->button('Buscar', ['class' => 'btn btn-primary mt-3', 'type' => 'submit']);
-                    echo $this->Html->link('Limpar', ['action' => 'index'], ['class' => 'btn btn-primary mt-3', 'type' => 'reset']);
-                    echo $this->Form->end();
+                    $options = ['' => 'Mostrar todos', '1' => 'Ativo', '0' => 'Inativo'];
+                    echo $this->Form->select('is_active', $options, ['empty' => true, 'class' => 'form-control']);
                     ?>
+                </div>
+                <?php
+                echo $this->Form->button('Buscar', ['action'=>'index','class' => 'btn btn-primary mt-3']);
+                echo $this->Html->link('Limpar', ['action' => 'index'], ['class' => 'btn btn-primary mt-3', 'type' => 'reset']);
+                echo $this->Form->end();
+                ?>
             </form>
         </div>
     </div>
+
+
 
 <?php foreach ($posts as $post): ?>
     <div class="panel panel-default">

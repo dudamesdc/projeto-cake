@@ -48,7 +48,7 @@ class UsersController extends AppController
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
                 $this->Flash->success(__('The user has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('action' => 'user_index'));
             } else {
                 $this->Flash->error(__('The user could not be saved. Please, try again.'));
             }
@@ -68,10 +68,10 @@ class UsersController extends AppController
         }
         if ($this->User->delete()) {
             $this->Flash->success(__('User deleted'));
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(array('action' => 'admin_index'));
         }
         $this->Flash->error(__('User was not deleted'));
-        $this->redirect(array('action' => 'index'));
+        $this->redirect(array('action' => 'admin_index'));
     }
     public function login() {
         if ($this->request->is('post')){
@@ -106,21 +106,14 @@ class UsersController extends AppController
         $this->set('users', $this->User->find('all'));
         $this->set('posts', $this->Post->find('all'));
     }
-    public function deleteUser($id= null){
-        if($this->request->is('post')){
-            if ($this->User->delete()) {
-                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                $this->redirect(array('controller'=>'users','action' => 'index'));
-            }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-            return $this->redirect(array('controller'=>'users','action' => 'admin_index'));
-        }
-    } 
+    
     public function user_index(){
         
         $this->loadModel('Post');
         $this->set('posts', $this->Post->find('all', array('contain'=>array('User'),'conditions' => array('Post.user_id' => $this->Auth->user('id')))));
         $this->set('user', $this->Auth->user());
     } 
-    
 
+    
+      
 }
