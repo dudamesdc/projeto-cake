@@ -14,8 +14,7 @@
       
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
-        <li><a data-toggle="tab"> <?php $this->Html->link('ver perfil', ['controller' => 'Users', 'action' => 'view', $admin['id']]) ?>ver perfil</a></li>
-        
+        <li><a data-toggle="tab" href="#view-profile">Ver Perfil</a></li>
         <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
       </ul>
 
@@ -52,7 +51,7 @@
 
         
       <div id="view-profile" class="tab-pane fade">
-          
+          <?php echo $this->render('view')?>
           
       </div>
       
