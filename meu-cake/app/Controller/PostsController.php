@@ -14,50 +14,13 @@ class PostsController extends AppController {
             $this->Auth->allow(['index', 'view','add','edit','delete','dashboard']);
         }
             
-        $this->Auth->allow(['index', 'view','dashboard']);
+        $this->Auth->allow(['index', 'view','add','login']);
 
         
 
     }
     
-    public function index() {
-        $this->Paginator->settings = [
-            'limit' => 5,
-            'order' => ['Post.created' => 'desc'],
-            'conditions' => ['Post.is_active' => '1']
-        ];
     
-        if ($this->request->is('post')) {
-            $filtro = $this->request->data['Post'];
-            $conditions = ['Post.is_active' => '1']; // Condição padrão
-    
-            if (!empty($filtro['content'])) {
-                $conditions['OR'] = [
-                    'Post.body LIKE' => "%{$filtro['content']}%",
-                    'Post.title LIKE' => "%{$filtro['content']}%"
-                ];
-            }
-    
-            if (!empty($filtro['create'])) {
-                $datai = date('Y-m-d', strtotime(implode('-', $filtro['create'])));
-                $conditions['Post.created >='] = $datai;
-            }
-    
-            if (!empty($filtro['end'])) {
-                $dataf = date('Y-m-d', strtotime(implode('-', $filtro['end'])));
-                $conditions['Post.modified <='] = $dataf;
-            }
-    
-            if (isset($filtro['is_active'])) {
-                $conditions['Post.is_active'] = ($filtro['is_active'] == '1');
-            }
-    
-            $this->Paginator->settings['conditions'] = $conditions;
-        }
-    
-        $posts = $this->Paginator->paginate('Post');
-        $this->set('posts', $posts);
-    }
     
 
     public function view($id = null) {
@@ -90,16 +53,24 @@ class PostsController extends AppController {
     
     function delete($id) {
         
-        if ($this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }else{
-            
+        if(!$this->request->is('post')){
             if ($this->Post->delete($id)) {
-                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                $this->redirect(['controller'=>'Users','action' => 'user_index']);
-            }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-            $this->redirect(['controller'=>'Users','action' => 'user_index']);
+                if( $this->Auth->user('role')=='user'){
+                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
+                    $this->redirect(['controller'=>'Users','action' => 'user_index']);
+                }else{
+                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
+                    $this->redirect(['controller'=>'Users','action' => 'admin_index']);
+                }
+            }else{
+                $this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
+                $this->redirect(['controller'=>'Users','action' => 'user_index']);    $this->redirect(['controller'=>'Users','action' => 'user_index']);
+            }
+        }else{
+            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
+            $this->redirect(['controller'=>'Users','action' => 'index']);
         }
+        
     }   
     function edit(){
        
@@ -135,4 +106,62 @@ class PostsController extends AppController {
         
     }
     
+    private function applyFilter(){
+           $conditions = array('Post.is_active' => '1');
+
+           if($this->Session->check('filter')){
+               $filtro = $this->Session->read('filter');
+               
+               if (!empty($filtro['Post']['content'])) {
+                   $conditions['OR'] = [
+                       'Post.body LIKE' => "%{$filtro['Post']['content']}%",
+                       'Post.title LIKE' => "%{$filtro['Post']['content']}%"
+                   ];
+                   
+               }
+            
+               if (!empty($filtro['Post']['create'])) {
+                   $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
+                   $conditions['Post.created >='] = $datai;
+               }
+            
+               if (!empty($filtro['Post']['end'])) {
+                   $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['end'])));
+                   $conditions['Post.modified <='] = $dataf;
+               }
+            
+               if (isset($filtro['Post']['is_active'])) {
+                   $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
+               }
+            
+               
+           }
+           debug($conditions);
+           return $conditions;
+    }
+        
+        public function index() {
+            
+            
+            if ($this->request->is('post')) {
+                
+                
+                $filtro = $this->request->data;
+                
+                $this->Session->write('filter', $filtro);
+                debug($this->Session->read('filter'));
+
+        
+            }
+            $condi=$this->applyFilter();
+            
+            $this->Paginator->settings = [
+                'limit' => 5,
+                'order' => ['Post.created' => 'desc'],
+                'conditions' => $condi
+            ];
+            debug($condi);
+            $this->set('posts', $this->Paginator->paginate('Post'));
+    
+    }
 }

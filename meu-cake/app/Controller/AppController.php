@@ -41,14 +41,8 @@ class AppController extends Controller {
 
     function beforeFilter() {
         
-        if($this->Auth->user('id')){
-            if($this->Auth->user('role') == 'admin'){
-                $this->Auth->allow('admin_index','delete','edit','add');
-            }else{
-                $this->Auth->allow('user_index','delete','edit','add');
-            }
-        }
-        $this->Auth->allow('index','view');       
+        
+        $this->Auth->allow('index','view','add','login');       
     }
 
 
