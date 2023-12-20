@@ -14,7 +14,7 @@
       
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
-        <li><a data-toggle="tab" href="#view-profile">Ver Perfil</a></li>
+        <li><?php echo $this->Html->link('perfil',['action' => 'view', $admin],['class'=>'data-toglle="tab"']); ?></li>
         <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
       </ul>
 
@@ -50,31 +50,31 @@
         
 
         
-      <div id="view-profile" class="tab-pane fade">
-          <?php echo $this->render('view')?>
+        <div id="view-profile" class="tab-pane fade">
+          <?php echo $this->Html->url(['action' => 'view', $admin]); ?>
           
-      </div>
+        </div>
       
-      <div id="view-posts" class="tab-pane fade">
-          <h3>Lista de Posts</h3>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Título</th>
-                <th>Data de Criação</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($posts as $post): ?>
-                <tr>
-                  <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
-                  <td><?php echo $post['Post']['created'] ?></td>
-                  <td><?php echo $this->Html->link('Deletar', ['controller' => 'Posts', 'action' => 'delete', $post['Post']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+        <div id="view-posts" class="tab-pane fade">
+            <h3>Lista de Posts</h3>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Data de Criação</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($posts as $post): ?>
+                    <tr>
+                      <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
+                      <td><?php echo $post['Post']['created'] ?></td>
+                      <td><?php echo $this->Html->link('Deletar', ['controller' => 'Posts', 'action' => 'delete', $post['Post']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
         </div>
         
       

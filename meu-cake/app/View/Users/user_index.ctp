@@ -1,14 +1,7 @@
-
+ 
 
     <h1>Olá, <?php echo $user['username']; ?>!</h1>
     
-    
-    
-    
-
-
-    
-
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -17,17 +10,18 @@
             <div class="panel-body">
                 <!-- Abas de perfil e posts -->
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#view-profile">Ver Perfil</a></li>
+                    <li class="active"><a data-toggle="tab" href="#view-profile">perfil </a></li>
                     <li><a data-toggle="tab" href="#user-posts">Meus Posts</a></li>
                 </ul>
 
                 <div class="tab-content">
                     <!-- Conteúdo da Aba "Ver Perfil" -->
                     <div id="view-profile" class="tab-pane fade in active">
-                        <!-- Adicione informações do perfil aqui -->
-                        <h4>Nome do Usuário: Maria Silva</h4>
-                        <h4>Email: maria@example.com</h4>
-                        <p>Outras informações do perfil...</p>
+
+                    <?php echo $this->Html->link('Ver Perfil', [ 'action' => 'view', $user['id']]); ?>
+                       
+                        
+                        
                     </div>
 
                     <!-- Conteúdo da Aba "Meus Posts" -->

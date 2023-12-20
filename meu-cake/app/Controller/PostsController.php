@@ -25,6 +25,7 @@ class PostsController extends AppController {
 
     public function view($id = null) {
         $this->set('post', $this->Post->findById($id));
+        
     }
 
     public function add() {
@@ -107,7 +108,7 @@ class PostsController extends AppController {
     }
     
     private function applyFilter(){
-           $conditions = array('Post.is_active' => '1');
+           $conditions = array();
 
            if($this->Session->check('filter')){
                $filtro = $this->Session->read('filter');
@@ -119,24 +120,25 @@ class PostsController extends AppController {
                    ];
                    
                }
-            
                if (!empty($filtro['Post']['create'])) {
-                   $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
-                   $conditions['Post.created >='] = $datai;
-               }
+                    $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
+                    $conditions['Post.created >='] = $datai;
+                }
+                
+                if (!empty($filtro['Post']['end'])) {
+                    $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['modified'])));
+                    $conditions['Post.modified <='] = $dataf;
+                }
             
-               if (!empty($filtro['Post']['end'])) {
-                   $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['end'])));
-                   $conditions['Post.modified <='] = $dataf;
-               }
+               
             
-               if (isset($filtro['Post']['is_active'])) {
+               if ($filtro['Post']['is_active']== '1') {
                    $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
                }
             
                
            }
-           debug($conditions);
+           
            return $conditions;
     }
         
@@ -149,19 +151,24 @@ class PostsController extends AppController {
                 $filtro = $this->request->data;
                 
                 $this->Session->write('filter', $filtro);
-                debug($this->Session->read('filter'));
+                
 
         
             }
+            if ($this->request->query('reset')) {
+                $this->Session->delete('filter');
+                $this->redirect(['action' => 'index']);
+            }
             $condi=$this->applyFilter();
-            
+             
             $this->Paginator->settings = [
                 'limit' => 5,
                 'order' => ['Post.created' => 'desc'],
                 'conditions' => $condi
             ];
-            debug($condi);
+            
             $this->set('posts', $this->Paginator->paginate('Post'));
     
     }
+    
 }

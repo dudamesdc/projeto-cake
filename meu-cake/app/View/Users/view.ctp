@@ -21,11 +21,7 @@
                 <dd><?php echo h($user['User']['created']); ?></dd>
             </dl>
 
-            <?php 
-            if($this->Auth->user('role') == 'admin') {
-                echo $this->Html->link('Editar Perfil', ['controller' => 'Users', 'action' => 'edit'], ['class' => 'btn btn-primary']);
-            }
-            ?>
+            
 
         </div>
     </div>

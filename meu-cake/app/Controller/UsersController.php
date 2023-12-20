@@ -2,6 +2,23 @@
 class UsersController extends AppController
 {
     public $helpers = array ('Html','Form');
+    public function beforeFilter() {
+        parent::beforeFilter();
+        if($this->Auth->user()){
+            if($this->Auth->user('role')=='admin'){
+                $this->Auth->allow(['user_index', 'view','add','edit','delete','admin_index']);
+            }
+            else{
+                $this->Auth->allow(['user_index', 'view','add','edit','delete']);
+            }
+            
+        }
+            
+        
+
+        
+
+    }
     
     
     
@@ -29,7 +46,7 @@ class UsersController extends AppController
                     $this->redirect(array('action' => 'admin_index'));
                 
                 }
-                $this->Flash->error(__('Erro ao cadastrar o administador'));
+                $this->Flash->error(__('Usuário cadastrado com sucesso'));
                 $this->redirect(array('action' => 'user_index'));
             } else {
                 
@@ -56,15 +73,15 @@ class UsersController extends AppController
             $this->request->data = $this->User->findById($id);
             unset($this->request->data['User']['password']);
         }
+        $this->set('user', $this->Auth->user());
     }
 
     public function delete($id = null) {
-        if (!$this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }
+        
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
+            $this->Flash->error(__('Usuário não encontrado'));
+            $this->redirect(array('action' => 'admin_index'));
         }
         if ($this->User->delete()) {
             $this->Flash->success(__('User deleted'));
@@ -100,9 +117,10 @@ class UsersController extends AppController
         $this->Auth->logout();
         $this->redirect(array('controller'=>'posts','action' => 'index'));
     }
-    public function admin_index(){
+    public function admin_index($id=null){
         $this->loadModel('Post');
-        $this->set('admin', $this->Auth->user());
+       
+        $this->set('admin',  $this->Auth->user('id'));
         $this->set('users', $this->User->find('all'));
         $this->set('posts', $this->Post->find('all'));
     }
