@@ -51,3 +51,5 @@ Router::connect('/admin_index', ['controller' => 'Users', 'action' => 'admin_ind
 Router::connect('/user_index', ['controller' => 'Users', 'action' => 'user_index']);
 Router::connect('/users', ['controller' => 'Users', 'action' => 'add']);
 Router::connect('Users/view', ['controller' => 'Users', 'action' => 'view']);
+// Em algum lugar nas rotas do CakePHP
+

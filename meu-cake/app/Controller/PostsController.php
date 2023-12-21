@@ -4,8 +4,11 @@ class PostsController extends AppController {
     public $helpers = array ('Html','Form');
     
     public $components =[
-        'Paginator','Session'
+        'Paginator','Session','RequestHandler'
+
+        
     ];
+    
     
     
     public function beforeFilter() {
@@ -33,7 +36,7 @@ class PostsController extends AppController {
         if ($this->request->is('post' )) {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
     
-            // Verifica se 'is_active' está definido e é diferente de '0'
+            
             if (isset($this->request->data['Post']['is_active']) && $this->request->data['Post']['is_active'] !== '0') {
                 $this->request->data['Post']['status'] = true;
             } else {

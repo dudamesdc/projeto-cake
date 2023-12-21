@@ -18276,3 +18276,464 @@ Stack Trace:
 #4 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #5 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #6 {main}
+2023-12-21 15:06:17 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:09:03 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:09:04 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:10:06 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:10:35 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:10:44 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:10:55 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:01 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:30:01 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:01 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:03 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:30:03 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:03 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:04 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:30:04 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:04 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:04 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:04 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:30:04 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 15:30:25 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:32:23 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:32:24 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:32:24 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:32:25 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:36:34 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:36:35 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:36:35 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:36:36 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:17 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:24 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:25 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:28 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:55 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:37:59 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home/dev/projeto-cake/meu-cake/app/webroot/js/navbar.js
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:38:43 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:38:47 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:38:48 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:40:27 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:40:30 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 15:40:31 Error: [MissingControllerException] Controller class CheckAuthenticationController could not be found.
+Exception Attributes: array (
+  'class' => 'CheckAuthenticationController',
+  'plugin' => NULL,
+)
+Request URL: /checkAuthentication
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 17:43:21 Error: [ParseError] syntax error, unexpected 'https' (T_STRING)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(933): View->_evaluate('/var/www/html/a...', Array)
+#1 /var/www/html/lib/Cake/View/View.php(546): View->_render('/var/www/html/a...')
+#2 /var/www/html/lib/Cake/View/View.php(481): View->renderLayout('\n\n\n\n<div class=...', 'default')
+#3 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, 'default')
+#4 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#6 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2023-12-21 17:43:21 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-21 17:43:21 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-21 19:22:17 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 19:22:17 Error: [MissingActionException] Action UsersController::caminho() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'caminho',
+)
+Request URL: /Users/caminho/para/foto-do-usuario.jpg
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 19:24:40 Error: [MissingControllerException] Controller class UserIndexController could not be found.
+Exception Attributes: array (
+  'class' => 'UserIndexController',
+  'plugin' => NULL,
+)
+Request URL: /user_index
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-21 19:25:00 Error: [MissingActionException] Action UsersController::usar_index() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'usar_index',
+)
+Request URL: /users/usar_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-21 20:20:51 Error: [Error] Call to a member function paginate() on null
+Request URL: /Users/admin_index
+Stack Trace:
+#0 [internal function]: UsersController->admin_index()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

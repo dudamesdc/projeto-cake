@@ -117,12 +117,70 @@ class UsersController extends AppController
         $this->Auth->logout();
         $this->redirect(array('controller'=>'posts','action' => 'index'));
     }
+
+    private function applyFilter(){
+        $conditions = array();
+
+        if($this->Session->check('filter')){
+            $filtro = $this->Session->read('filter');
+            
+            if (!empty($filtro['Post']['content'])) {
+                $conditions['OR'] = [
+                    'Post.body LIKE' => "%{$filtro['Post']['content']}%",
+                    'Post.title LIKE' => "%{$filtro['Post']['content']}%"
+                ];
+                
+            }
+            if (!empty($filtro['Post']['create'])) {
+                 $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
+                 $conditions['Post.created >='] = $datai;
+             }
+             
+             if (!empty($filtro['Post']['end'])) {
+                 $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['modified'])));
+                 $conditions['Post.modified <='] = $dataf;
+             }
+         
+            
+         
+            if ($filtro['Post']['is_active']== '1') {
+                $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
+            }
+         
+            
+        }
+        
+        return $conditions;
+ }
     public function admin_index($id=null){
         $this->loadModel('Post');
-       
+        
+        if ($this->request->is('post')) {
+                
+                
+            $filtro = $this->request->data;
+            
+            $this->Session->write('filter', $filtro);
+            
+
+    
+        }
+        if ($this->request->query('reset')) {
+            $this->Session->delete('filter');
+            $this->redirect(['action' => 'index']);
+        }
+        $condi=$this->applyFilter();
+         
+        $this->Paginator->settings = [
+            'limit' => 5,
+            'order' => ['Post.created' => 'desc'],
+            'conditions' => $condi
+        ];
+
+    
         $this->set('admin',  $this->Auth->user('id'));
         $this->set('users', $this->User->find('all'));
-        $this->set('posts', $this->Post->find('all'));
+        $this->set('posts', $this->Paginator->paginate('Post'));
     }
     
     public function user_index(){
@@ -130,8 +188,8 @@ class UsersController extends AppController
         $this->loadModel('Post');
         $this->set('posts', $this->Post->find('all', array('contain'=>array('User'),'conditions' => array('Post.user_id' => $this->Auth->user('id')))));
         $this->set('user', $this->Auth->user());
-    } 
-
+    }
+   
     
       
 }

@@ -36,14 +36,20 @@ class AppController extends Controller {
         'Auth' => array(
             'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
-        )
+        ),
+        'Session','RequestHandler'
+
     );
+    // No seu controlador ou AppController
+    public $helpers = array('Js' => array('Jquery'));
+
 
     function beforeFilter() {
         
         
         $this->Auth->allow('index','view','add','login');       
     }
+    
 
 
 }

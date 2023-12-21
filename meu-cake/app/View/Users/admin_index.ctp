@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <!-- Perfil do Administrador -->
   <div class="panel panel-default">
@@ -9,76 +7,57 @@
     <div class="panel-body">
       
       <h4>Olá, <?php echo $admin['username']?> </h4>
-      
 
-      
+      <!-- Adiciona a navegação em abas -->
       <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
-        <li><?php echo $this->Html->link('perfil',['action' => 'view', $admin],['class'=>'data-toglle="tab"']); ?></li>
-        <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
+        <li class="active"><a data-toggle="tab" href="#view-all-posts">Todos os Posts</a></li>
+        <li><a data-toggle="tab" href="#view-specific-posts">Meus Posts</a></li>
+        <li><?php echo $this->Html->link('Perfil',['action' => 'view', $admin],['class'=>'data-toglle="tab"']); ?></li>
       </ul>
 
-  
-      <div class="tab-content">
-          <div id="view-users" class="tab-pane fade in active">
+      <!-- Adiciona o formulário de filtro -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-inline" method="post" action="<?php echo $this->Html->url(['controller' => 'posts', 'action' => 'index']); ?>">
+            <?php echo $this->Form->create('Post', ['type' => 'post']); ?>
             <div class="form-group">
-              <label for="userSearch">Pesquisar Usuário:</label>
-              <input type="text" class="form-control" id="userSearch">
+              <?php echo $this->Form->input('content', ['class' => 'form-control', 'placeholder' => 'Digite o título', 'type' => 'text', 'label' => 'Título/Conteúdo', 'empty'=>true]); ?>
             </div>
+            <div class="form-group">
+              <?php echo $this->Form->input('create', ['class' => 'form-control', 'type' => 'date','dateFormat'=>'DMY', 'label' => 'Data de criação','empty'=>true]); ?>
+            </div>
+            <div class="form-group">
+              <?php echo $this->Form->input('modified', ['class' => 'form-control', 'type' => 'date','dateFormat'=>'DMY', 'label' => 'Data de modificação','empty'=>true]); ?>
+            </div>
+            <div class="form-group">
+              <?php
+              $options = ['' => '', '1' => 'Ativo', '0' => 'Inativo'];
+              echo $this->Form->select('is_active', $options, [ 'class' => 'form-control']);
+              ?>
+            </div>
+            <?php
+            echo $this->Form->button('Buscar', ['action'=>'index','class' => 'btn btn-primary mt-3']);
+            echo $this->Html->link('Limpar', ['action' => 'index', '?' => ['reset'=>true]], ['class' => 'btn btn-primary mt-3']);
+            echo $this->Form->end();
+            ?>
+          </form>
+        </div>
+      </div>
 
-            <h3>Lista de Usuários</h3>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Título</th>
-                  <th>Data de Criação</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach ($users as $user): ?>
-                  <tr>
-                    <td><span class="active-indicator"></span><?php echo $this->Html->link($user['User']['username'],['controller'=>'Users','action'=>'view', $user['User']['id']])?></td>
-                    <td><?php echo $user['User']['created'] ?></td>
-                    <td><?php echo $this->Html->link('Deletar', ['controller' => 'Users', 'action' => 'delete', $user['User']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?></td>
-                  </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
-          </div>
-      
-        
+      <!-- Adiciona as abas de conteúdo -->
+      <div class="tab-content">
+        <div id="view-all-posts" class="tab-pane fade in active">
+          <!-- Adicione aqui a lógica para listar todos os posts do admin -->
+        </div>
 
-        
+        <div id="view-specific-posts" class="tab-pane fade">
+          <!-- Adicione aqui a lógica para listar os posts específicos do admin -->
+        </div>
+
         <div id="view-profile" class="tab-pane fade">
           <?php echo $this->Html->url(['action' => 'view', $admin]); ?>
-          
         </div>
-      
-        <div id="view-posts" class="tab-pane fade">
-            <h3>Lista de Posts</h3>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Título</th>
-                    <th>Data de Criação</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach ($posts as $post): ?>
-                    <tr>
-                      <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
-                      <td><?php echo $post['Post']['created'] ?></td>
-                      <td><?php echo $this->Html->link('Deletar', ['controller' => 'Posts', 'action' => 'delete', $post['Post']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?></td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-        </div>
-        
-      
-
+      </div>
     </div>
   </div>
 </div>
