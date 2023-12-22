@@ -91,27 +91,21 @@ class UsersController extends AppController
         $this->redirect(array('action' => 'admin_index'));
     }
     public function login() {
-        if ($this->request->is('post')){
+        if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                $role=$this->Auth->user('role');
-                    if($role=='admin'){
-                    
-                        $this->redirect(array('action' => 'admin_index'));
-                
-                    }
-                    
-                    $this->redirect((['action' => 'user_index']));
+                $role = $this->Auth->user('role');
+                if ($role == 'admin') {
+                    $this->redirect(array('action' => 'admin_index'));
+                } else {
+                    $this->redirect(array('action' => 'user_index'));
+                }
             } else {
-                
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
-                $this->redirect(array('controller'=>'posts','url' => 'index'));
-            }
-                
-             
                 $this->Flash->error(__('Usuário ou senha inválidos, tente novamente'));
-            
+                $this->redirect(array('controller' => 'posts', 'action' => 'index'));
+            }
         }
     }
+    
     
     public function logout() {
         $this->Auth->logout();
@@ -178,15 +172,35 @@ class UsersController extends AppController
         ];
 
     
-        $this->set('admin',  $this->Auth->user('id'));
+        $this->set('admin',  $this->Auth->user());
         $this->set('users', $this->User->find('all'));
         $this->set('posts', $this->Paginator->paginate('Post'));
     }
     
     public function user_index(){
-        
+        if ($this->request->is('post')) {
+                
+                
+            $filtro = $this->request->data;
+            
+            $this->Session->write('filter', $filtro);
+            
+
+    
+        }
+        if ($this->request->query('reset')) {
+            $this->Session->delete('filter');
+            $this->redirect(['action' => 'index']);
+        }
+        $condi=$this->applyFilter();
+         
+        $this->Paginator->settings = [
+            'limit' => 5,
+            'order' => ['Post.created' => 'desc'],
+            'conditions' => $condi
+        ];
         $this->loadModel('Post');
-        $this->set('posts', $this->Post->find('all', array('contain'=>array('User'),'conditions' => array('Post.user_id' => $this->Auth->user('id')))));
+        $this->set('posts', $this->Paginator->paginate('Post'));
         $this->set('user', $this->Auth->user());
     }
    
