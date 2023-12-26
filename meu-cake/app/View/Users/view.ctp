@@ -1,28 +1,20 @@
-
-
-<div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Perfil do Usuário</h3>
-        </div>
-        <div class="panel-body">
-
-            <dl class="dl-horizontal">
-                <dt>Nome de Usuário:</dt>
-                <dd><?php echo h($user['User']['username']); ?></dd>
-
-                <dt>E-mail:</dt>
-                <dd><?php echo h($user['User']['email']); ?></dd>
-
-                <dt>CPF:</dt>
-                <dd><?php echo h($user['User']['cpf']); ?></dd>
-
-                <dt>Data de Registro:</dt>
-                <dd><?php echo h($user['User']['created']); ?></dd>
-            </dl>
-
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Criação</th>
+            <th>Última atualização</th>
             
-
-        </div>
-    </div>
-</div>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($posts as $post): ?>
+            <tr>
+                <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'posts', 'action' => 'view', $post['Post']['id']]); ?></td>
+                <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?></td>
+                <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
+                
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

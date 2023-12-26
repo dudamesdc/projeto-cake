@@ -26,10 +26,37 @@ class PostsController extends AppController {
     
     
 
-    public function view($id = null) {
-        $this->set('post', $this->Post->findById($id));
+    public function view( $id) {
+        
+        $this->loadModel('User');
+        
+        if ($this->request->is('post')) {
+                
+                
+            $filtro = $this->request->data;
+            
+            $this->Session->write('filter', $filtro);
+            
+
+    
+        }
+        if ($this->request->query('reset')) {
+            $this->Session->delete('filter');
+            $this->redirect(['action' => 'user_index']);
+        }
+        $condi=$this->applyFilter();
+         
+        $this->Paginator->settings = [
+            'limit' => 5,
+            'order' => ['Post.created' => 'desc'],
+            'conditions' => $condi
+        ];
+        
+        $this->set('posts', $this->Paginator->paginate('Post'));
+        $this->set('user', $this->User->findById($id));
         
     }
+    
 
     public function add() {
         
@@ -44,66 +71,62 @@ class PostsController extends AppController {
             }
     
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success('Seu post foi adicionado.');
+                $this->Flash->success('Seu post foi adicionado.', ['element' => 'success']);
                 $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             } else {
-                $this->Flash->error('Não foi possível adicionar seu post.');
+                $this->Flash->error('Não foi possível adicionar seu post.', ['element' => 'success']);
                 $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
         }
-    
+        
         
     }
     
     function delete($id) {
-        
-        if(!$this->request->is('post')){
+        if (!$this->request->is('post')) {
             if ($this->Post->delete($id)) {
-                if( $this->Auth->user('role')=='user'){
-                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                    $this->redirect(['controller'=>'Users','action' => 'user_index']);
-                }else{
-                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                    $this->redirect(['controller'=>'Users','action' => 'admin_index']);
+                if ($this->Auth->user('role') == 'user') {
+                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
+                    $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
+                } else {
+                    $this->Flash->error('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
+                    $this->redirect(['controller' => 'Users', 'action' => 'admin_index']);
                 }
-            }else{
-                $this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-                $this->redirect(['controller'=>'Users','action' => 'user_index']);    $this->redirect(['controller'=>'Users','action' => 'user_index']);
+            } else {
+                $this->Flash->success('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
+                $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
-        }else{
-            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-            $this->redirect(['controller'=>'Users','action' => 'index']);
+        } else {
+            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
+            $this->redirect(['controller' => 'Users', 'action' => 'index']);
         }
-        
-    }   
-    function edit(){
-       
-        if (($this->request->is('post')||($this->request->is('put')))) {
-            $id=$this->request->data['Post']['id'];
-            $post=$this->Post->findById($id);
-            
-            if($this->Post->save($this->request->data)){
-                $this->Flash->success(__('Seu post foi atualizado.'));
-                return $this->redirect(array('controller'=>'Users','action'=>'user_index'));
-            }
-            $this->Flash->error(__('Não foi possível atualizar seu post.'));
-            
-        }else{
-            $id=$this->request->params['pass'][0];
-            $post=$this->Post->findById($id);
-            $this->request->data=$post ;
-        }   
-
-     
     }
-    function deleteUser($id){
-        if($this->request->is('post')){
-            if ($this->Post->delete($id)) {
-                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                $this->redirect(array('controller'=>'users','action' => 'index'));
-            }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
+    function edit() {
+        if (($this->request->is('post') || ($this->request->is('put')))) {
+            $id = $this->request->data['Post']['id'];
+            $post = $this->Post->findById($id);
+    
+            if ($this->Post->save($this->request->data)) {
+                $this->Flash->success(__('Seu post foi atualizado.'), ['element' => 'success']);
+                return $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
+            }
+            $this->Flash->error(__('Não foi possível atualizar seu post.'), ['element' => 'success']);
+        } else {
+            $id = $this->request->params['pass'][0];
+            $post = $this->Post->findById($id);
+            $this->request->data = $post;
         }
-    } 
+    }
+    
+    function deleteUser($id) {
+        if ($this->request->is('post')) {
+            if ($this->Post->delete($id)) {
+                $this->Flash->success('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
+                $this->redirect(['controller' => 'users', 'action' => 'index']);
+            }
+            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
+        }
+    }
     
     public function logout(){
         return $this->redirect($this->Auth->logout());
@@ -115,6 +138,7 @@ class PostsController extends AppController {
 
            if($this->Session->check('filter')){
                $filtro = $this->Session->read('filter');
+               $this->request->data['Post'] = $filtro['Post'];
                
                if (!empty($filtro['Post']['content'])) {
                    $conditions['OR'] = [
@@ -171,7 +195,8 @@ class PostsController extends AppController {
             ];
             
             $this->set('posts', $this->Paginator->paginate('Post'));
-    
+            $this->loadModel('User');
+            $this->set('user', $this->Auth->user());
     }
     
 }

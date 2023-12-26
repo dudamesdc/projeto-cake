@@ -9,13 +9,10 @@
         </div>
         <div class="form-group">
             <?php $this->Form->label('body', 'Conteúdo'); ?>
-            <?php echo $this->Form->input('body', ['class' => 'form-control', 'placeholder' => 'Digite o conteúdo', 'type' => 'text']); ?>
+            <?php echo $this->Form->input('body', ['class' => 'form-control', 'placeholder' => 'Digite o conteúdo', 'type' => 'text','rows'=>'4']); ?>
         </div>
 
-        <div class="form-group">
-            <?php $this->Form->label('image_path', 'Arquivo'); ?>
-            <?php echo $this->Form->input('image_path', ['class' => 'form-control-file', 'type' => 'file']); ?>
-        </div>
+       
 
         <div class="checkbox">
             <label>

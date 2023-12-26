@@ -1,77 +1,72 @@
- 
-
-    <h1>Olá, <?php echo $user['username']; ?>!</h1>
-    
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Perfil</h3>
-            </div>
-            <div class="panel-body">
-               
-                <ul class="nav nav-tabs">
-                   <li class="active"><a data-toggle="tab" href="#user-posts">Meus Posts</a></li>
-                   <li ><a data-toggle="tab" href="#view-profile">perfil </a></li>
-                </ul>
-
-                <div class="tab-content">
-                    <!-- Conteúdo da Aba "Ver Perfil" -->
-                    <div id="view-profile" class="tab-pane fade" >
-
-                    <?php echo $this->Html->link('Ver Perfil', [ 'action' => 'view', $user['id']]); ?>
-                       
-                        
-                        
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                &nbsp; Bem-vindo ao Seu Perfil, <?php echo $user['username']; ?>!
+            </h3>
+        </div>
+        <div class="panel-body">
+            <!-- Informações do usuário, como avatar e detalhes -->
+            <div class="row">
+                <div>
+                    
+                    <?php echo $this->Html->link('Visualizar Perfil', ['action' => 'view', $user['id']], ['class' => 'btn btn-primary btn-block', 'role' => 'button']); ?>
                 </div>
+                <div>
+                    <!-- Título da seção "Meus Posts" -->
+                    <div class="row" style="margin-bottom: 40px;"></div>
+  
+                    
+                    <!-- Opção de resetar filtro -->
+                    <?php
+                    if ($this->request->query('reset')) {
+                        $this->Session->delete('filter');
+                        $this->redirect(['action' => 'user_index']);
+                    }
+                    ?>
 
-                
-                    <div id= "user-posts" class="tab-pane fade in active ">
-                        <?php
-                            if ($this->request->query('reset')) {
-                                $this->Session->delete('filter');
-                                $this->redirect(['action' => 'user_index']);
-                            }
-                        ?>
-                        
-                    <h3>Meus Posts</h3>
+                    <!-- Aplicar filtro (se aplicável) -->
                     <?php echo $this->element('applyFilter'); ?>
-                        <table class='table'>
-                        
-                            <thead>
-                            
+                    <div class="row" style="margin-bottom: 40px;"></div>
+                    <!-- Tabela de Posts -->
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Criação</th>
+                                <th>Última atualização</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($posts as $post): ?>
                                 <tr>
-                                    <th>Título</th>
-                                    <th>Criação</th>
-                                    <th>Última atualização</th>
-                                    <th>Ações</th>
-                                </tr>
-                            <tbody>
-                                <?php
-                
-
-                                foreach ($posts as $post):?>
-                                <tr>
-                                    <td><?php echo $this->Html->link($post['Post']['title'], array('controller' => 'posts', 'action' => 'view', $post['Post']['id']));?></td>
+                                    <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'posts', 'action' => 'view', $post['Post']['id']]); ?></td>
                                     <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?></td>
                                     <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
-                                        <td>
-                                            <?php echo $this->Html->link('Deletar',array('controller'=>'posts','action'=>'delete',$post['Post']['id']));?>
-                                            <?php echo $this->Html->link('Editar', array('controller' => 'posts', 'action' => 'edit', $post['Post']['id']));?>
-                                        </td>
+                                    <td>
+                                        <?php
+                                        // Ícones do Bootstrap para deletar e editar
+                                        echo $this->Html->link(
+                                            '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>',
+                                            ['controller' => 'posts', 'action' => 'delete', $post['Post']['id']],
+                                            ['escape' => false, 'confirm' => 'Tem certeza?']
+                                        );
 
-
-                                        
-                                        <td><?php echo $this->Form->input('status', array('type' => 'checkbox', 'label' => 'ativo'));?></td>
+                                        echo $this->Html->link(
+                                            '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',
+                                            ['controller' => 'posts', 'action' => 'edit', $post['Post']['id']],
+                                            ['escape' => false]
+                                        );
+                                        ?>
+                                    </td>
                                 </tr>
-                
-                                <?php endforeach;?>
-                            </tbody>
-                    </div>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-   
+</div>

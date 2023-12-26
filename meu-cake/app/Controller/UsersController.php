@@ -4,24 +4,20 @@ class UsersController extends AppController
     public $helpers = array ('Html','Form');
     public function beforeFilter() {
         parent::beforeFilter();
-        if($this->Auth->user()){
-            if($this->Auth->user('role')=='admin'){
-                $this->Auth->allow(['user_index', 'view','add','edit','delete','admin_index']);
+
+        
+        if ($this->Auth->user()) {
+            $role = $this->Auth->user('role');
+            if ($role == 'admin') {
+                $this->Auth->allow(['admin_index']);
             }
             else{
-                $this->Auth->allow(['user_index', 'view','add','edit','delete']);
+                $this->Auth->allow([ 'user_index']);
+            
             }
-            
         }
-            
-        
-
-        
-
     }
-    
-    
-    
+
     public function index() {
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
@@ -35,39 +31,36 @@ class UsersController extends AppController
     }
 
     public function add() {
-        
         if ($this->request->is('post')) {
-            
             $this->User->create();
-             if ($this->User->save($this->request->data)) {
-                $role=$this->request->data('User.role');
-                if($role=='admin'){
-                    $this->Flash->success(__('admin cadastrado com sucesso'));
-                    $this->redirect(array('action' => 'admin_index'));
+    
+            if ($this->User->save($this->request->data)) {
                 
+                $this->Auth->login($this->request->data);
+    
+                $role = $this->request->data('User.role');
+                if ($role == 'admin') {
+                    $this->Flash->success('Admin cadastrado com sucesso.');
+                    $this->redirect(['action' => 'admin_index']);
+                } else {
+                    $this->Flash->error('Usuário cadastrado com sucesso.');
+                    $this->redirect(['action' => 'user_index']);
                 }
-                $this->Flash->error(__('Usuário cadastrado com sucesso'));
-                $this->redirect(array('action' => 'user_index'));
-            } else {
-                
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
-                $this->redirect(array('controller'=>'posts','url' => 'index'));
             }
         }
     }
-    
 
     public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
+            throw new NotFoundException(__('Usuário não encontrado'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('The user has been saved'));
+                $this->Flash->success(__('Usuário salvo com sucesso' ,[['element' => 'success']]));
                 $this->redirect(array('action' => 'user_index'));
             } else {
-                $this->Flash->error(__('The user could not be saved. Please, try again.'));
+                $this->Flash->error(__('Usuário não pode ser salvo. Por favor, tente novamente.' ,[['element' => 'success']]));
             }
         } else {
             $this->request->data = $this->User->findById($id);
@@ -75,19 +68,18 @@ class UsersController extends AppController
         }
         $this->set('user', $this->Auth->user());
     }
-
     public function delete($id = null) {
         
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            $this->Flash->error(__('Usuário não encontrado'));
+            $this->Flash->error(__('Usuário não encontrado', ['element' => 'set']));
             $this->redirect(array('action' => 'admin_index'));
         }
         if ($this->User->delete()) {
-            $this->Flash->success(__('User deleted'));
+            $this->Flash->success(__('Usuário deletado', ['element' => 'success']));
             $this->redirect(array('action' => 'admin_index'));
         }
-        $this->Flash->error(__('User was not deleted'));
+        $this->Flash->error(__('Usuário não pode ser deletado', ['element' => 'success']));
         $this->redirect(array('action' => 'admin_index'));
     }
     public function login() {
@@ -100,7 +92,7 @@ class UsersController extends AppController
                     $this->redirect(array('action' => 'user_index'));
                 }
             } else {
-                $this->Flash->error(__('Usuário ou senha inválidos, tente novamente'));
+                $this->Flash->error(__('Usuário ou senha inválidos, tente novamente',['element' => 'success']));
                 $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
         }
@@ -190,7 +182,7 @@ class UsersController extends AppController
         }
         if ($this->request->query('reset')) {
             $this->Session->delete('filter');
-            $this->redirect(['action' => 'index']);
+            $this->redirect(['action' => 'user_index']);
         }
         $condi=$this->applyFilter();
          
