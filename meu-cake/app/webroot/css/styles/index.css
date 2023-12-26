@@ -62,13 +62,17 @@ body {
 
   .panel-heading {
     background-color: #001f3f; /* Fundo azul marinho para o cabeçalho do painel */
-    color: #ffffff; /* Texto branco para o cabeçalho do painel */
+    color: #001f3f; /* Texto branco para o cabeçalho do painel */
   }
 
   .panel-title {
-    color: #ffffff; /* Texto branco para o título do painel */
+    color: #001f3f;  /* Texto branco para o título do painel */
   }
 
   .panel-body {
     background-color: #ffffff; /* Fundo branco para o corpo do painel */
+  }
+  conteiner .panel-body h2 {
+    color: red;
+  
   }

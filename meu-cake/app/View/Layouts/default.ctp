@@ -1,36 +1,44 @@
-<!-- default.ctp -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <title>Seu Blog</title>
-  <link rel="stylesheet" href="/css/styles/index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?php echo $this->fetch('title'); ?></title>
+
+    <?php
+    // Links do Bootstrap 3 via CDN
+    echo $this->Html->css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+    echo $this->Html->script('https://code.jquery.com/jquery-1.12.4.min.js');
+    
+    echo $this->Html->script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js');
+    echo $this->Js->writeBuffer();
+    ?>
+
+    <!-- Seu estilo personalizado -->
+    
+    
+    
 </head>
-
-
-    
-    
-
-
 <body>
+    <header class="main-header">
+        <!-- Conteúdo do cabeçalho principal aqui -->
+    </header>
+
     <nav>
         <div>
             <?php echo $this->element('navbar'); ?>
         </div>
-    </nav>  
-        
-            <?php echo $this->Flash->render(); ?>
-            
-            <?php echo $this->fetch('content'); ?>
-        
-        <div>
-            <?php $this->element('footer'); ?>
-        </div>
+    </nav>
+
+    <div class="container">
+        <?php echo $this->Session->flash();?>
+
+        <?php echo $this->Flash->render(); ?>
+        <?php echo $this->fetch('content'); ?>
     </div>
+
+    <footer>
+        <?php $this->element('footer'); ?>
+    </footer>
 </body>
 </html>

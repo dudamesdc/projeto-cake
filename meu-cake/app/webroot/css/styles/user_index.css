@@ -1,0 +1,65 @@
+/* Adicione este CSS à sua folha de estilo */
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.panel {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.panel-heading {
+    background-color: #001f3f;
+    color: #ffffff;
+}
+
+.panel-title {
+    color:  #001f3f;
+}
+
+.panel-body {
+    background-color: #ffffff;
+}
+
+.nav {
+    margin-top: 20px;
+}
+
+.nav-tabs {
+    border: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #001f3f;
+    color: #ffffff;
+}
+
+.nav-tabs>li>a {
+    background-color: #f8f8f8;
+    color: #333333;
+}
+
+.table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+    background-color: #f8f8f8;
+}
+
+.btn-primary {
+    background-color: #001f3f;
+    border-color: #001f3f;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #001f3f;
+    border-color: #ffffff;
+}

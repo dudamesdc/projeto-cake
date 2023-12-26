@@ -2,6 +2,21 @@
 class UsersController extends AppController
 {
     public $helpers = array ('Html','Form');
+    public function beforeFilter() {
+        parent::beforeFilter();
+        
+        if ($this->Auth->user()) {
+            $role = $this->Auth->user('role');
+            if ($role == 'admin') {
+                $this->Auth->allow(['admin_index']);
+            }
+            else{
+                $this->Auth->allow([ 'user_index']);
+            
+            }
+        }
+    }
+    
     
     
     
@@ -18,109 +33,179 @@ class UsersController extends AppController
     }
 
     public function add() {
-        
         if ($this->request->is('post')) {
-            
             $this->User->create();
-             if ($this->User->save($this->request->data)) {
-                $role=$this->request->data('User.role');
-                if($role=='admin'){
-                    $this->Flash->success(__('admin cadastrado com sucesso'));
-                    $this->redirect(array('action' => 'admin_index'));
-                
+    
+            if ($this->User->save($this->request->data)) {
+                // Autenticar o usuário recém-criado
+                $this->Auth->login($this->request->data);
+    
+                $role = $this->request->data('User.role');
+                if ($role == 'admin') {
+                    $this->Session->setFlash('Admin cadastrado com sucesso.', ['class' => 'alert alert-success']);
+                    $this->redirect(['action' => 'admin_index']);
+                } else {
+                    $this->Flash->success('Usuário cadastrado com sucesso.', ['class' => 'alert alert-success']);
+                    $this->redirect(['action' => 'user_index']);
                 }
-                $this->Flash->error(__('Erro ao cadastrar o administador'));
-                $this->redirect(array('action' => 'user_index'));
+
             } else {
-                
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
-                $this->redirect(array('controller'=>'posts','url' => 'index'));
+                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.', ['class' => 'alert alert-danger']));
+                $this->redirect(['controller' => 'posts', 'action' => 'index']);
             }
         }
+        // Remova a linha abaixo, pois você não precisa setar o usuário na view aqui
+        // $this->set('user', $this->Auth->user());
     }
     
 
     public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
+            throw new NotFoundException(__('Usuário não encontrado'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('The user has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->Flash->success(__('Usuário salvo com sucesso' ,['class' => 'alert alert-success']));
+                $this->redirect(array('action' => 'user_index'));
             } else {
-                $this->Flash->error(__('The user could not be saved. Please, try again.'));
+                $this->Flash->error(__('Usuário não pode ser salvo. Por favor, tente novamente.' ,['class' => 'alert alert-danger']));
             }
         } else {
             $this->request->data = $this->User->findById($id);
             unset($this->request->data['User']['password']);
         }
+        $this->set('user', $this->Auth->user());
     }
 
     public function delete($id = null) {
-        if (!$this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }
+        
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
+            $this->Flash->error(__('Usuário não encontrado', ['class' => 'alert alert-danger']));
+            $this->redirect(array('action' => 'admin_index'));
         }
         if ($this->User->delete()) {
-            $this->Flash->success(__('User deleted'));
-            $this->redirect(array('action' => 'index'));
+            $this->Flash->success(__('Usuário deletado', ['class' => 'alert alert-success']));
+            $this->redirect(array('action' => 'admin_index'));
         }
-        $this->Flash->error(__('User was not deleted'));
-        $this->redirect(array('action' => 'index'));
+        $this->Flash->error(__('Usuário não pode ser deletado', ['class' => 'alert alert-danger']));
+        $this->redirect(array('action' => 'admin_index'));
     }
     public function login() {
-        if ($this->request->is('post')){
+        if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                $role=$this->Auth->user('role');
-                    if($role=='admin'){
-                    
-                        $this->redirect(array('action' => 'admin_index'));
-                
-                    }
-                    
-                    $this->redirect((['action' => 'user_index']));
+                $role = $this->Auth->user('role');
+                if ($role == 'admin') {
+                    $this->redirect(array('action' => 'admin_index'));
+                } else {
+                    $this->redirect(array('action' => 'user_index'));
+                }
             } else {
-                
-                $this->Flash->error(__('O usuário não pôde ser salvo. Por favor, tente novamente.'));
-                $this->redirect(array('controller'=>'posts','url' => 'index'));
+                $this->Flash->error(__('Usuário ou senha inválidos, tente novamente', array('class' => 'alert alert-danger')));
+                $this->redirect(array('controller' => 'posts', 'action' => 'index'));
             }
-                
-             
-                $this->Flash->error(__('Usuário ou senha inválidos, tente novamente'));
-            
         }
     }
+    
     
     public function logout() {
         $this->Auth->logout();
         $this->redirect(array('controller'=>'posts','action' => 'index'));
     }
-    public function admin_index(){
-        $this->loadModel('Post');
-        $this->set('admin', $this->Auth->user());
-        $this->set('users', $this->User->find('all'));
-        $this->set('posts', $this->Post->find('all'));
-    }
-    public function deleteUser($id= null){
-        if($this->request->is('post')){
-            if ($this->User->delete()) {
-                $this->Flash->success('The post with id: ' . $id . ' has been deleted.');
-                $this->redirect(array('controller'=>'users','action' => 'index'));
-            }$this->Flash->error('The post with id: ' . $id . ' could not be deleted.');
-            return $this->redirect(array('controller'=>'users','action' => 'admin_index'));
-        }
-    } 
-    public function user_index(){
-        
-        $this->loadModel('Post');
-        $this->set('posts', $this->Post->find('all', array('contain'=>array('User'),'conditions' => array('Post.user_id' => $this->Auth->user('id')))));
-        $this->set('user', $this->Auth->user());
-    } 
-    
 
+    private function applyFilter(){
+        $conditions = array();
+
+        if($this->Session->check('filter')){
+            $filtro = $this->Session->read('filter');
+            
+            if (!empty($filtro['Post']['content'])) {
+                $conditions['OR'] = [
+                    'Post.body LIKE' => "%{$filtro['Post']['content']}%",
+                    'Post.title LIKE' => "%{$filtro['Post']['content']}%"
+                ];
+                
+            }
+            if (!empty($filtro['Post']['create'])) {
+                 $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
+                 $conditions['Post.created >='] = $datai;
+             }
+             
+             if (!empty($filtro['Post']['end'])) {
+                 $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['modified'])));
+                 $conditions['Post.modified <='] = $dataf;
+             }
+         
+            
+         
+            if ($filtro['Post']['is_active']== '1') {
+                $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
+            }
+         
+            
+        }
+        
+        return $conditions;
+ }
+    public function admin_index($id=null){
+        $this->loadModel('Post');
+        
+        if ($this->request->is('post')) {
+                
+                
+            $filtro = $this->request->data;
+            
+            $this->Session->write('filter', $filtro);
+            
+
+    
+        }
+        if ($this->request->query('reset')) {
+            $this->Session->delete('filter');
+            $this->redirect(['action' => 'index']);
+        }
+        $condi=$this->applyFilter();
+         
+        $this->Paginator->settings = [
+            'limit' => 5,
+            'order' => ['Post.created' => 'desc'],
+            'conditions' => $condi
+        ];
+
+    
+        $this->set('admin',  $this->Auth->user());
+        $this->set('users', $this->User->find('all'));
+        $this->set('posts', $this->Paginator->paginate('Post'));
+    }
+    
+    public function user_index(){
+        if ($this->request->is('post')) {
+                
+                
+            $filtro = $this->request->data;
+            
+            $this->Session->write('filter', $filtro);
+            
+
+    
+        }
+        if ($this->request->query('reset')) {
+            $this->Session->delete('filter');
+            $this->redirect(['action' => 'user_index']);
+        }
+        $condi=$this->applyFilter();
+         
+        $this->Paginator->settings = [
+            'limit' => 5,
+            'order' => ['Post.created' => 'desc'],
+            'conditions' => $condi
+        ];
+        $this->loadModel('Post');
+        $this->set('posts', $this->Paginator->paginate('Post'));
+        $this->set('user', $this->Auth->user());
+    }
+   
+    
+      
 }

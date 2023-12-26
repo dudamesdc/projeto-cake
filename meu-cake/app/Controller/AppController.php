@@ -32,24 +32,30 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
     public $components = array(
-        'Flash',
+        'Flash'=>array(
+            'params'=>array(
+                'class'=>array(
+                    'success'=>'alert alert-success',
+                    'error'=>'alert alert-danger'
+                )
+            )
+        )
+        ,
         'Auth' => array(
             'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
-        )
+        ),
+        'Session','RequestHandler', 'Paginator'
+
     );
+    
+    public $helpers = array('Js' => array('Jquery'));
+
 
     function beforeFilter() {
-        
-        if($this->Auth->user('id')){
-            if($this->Auth->user('role') == 'admin'){
-                $this->Auth->allow('admin_index','delete','edit','add');
-            }else{
-                $this->Auth->allow('user_index','delete','edit','add');
-            }
-        }
-        $this->Auth->allow('index','view');       
+        $this->Auth->allow('index','view','add','login','logout');       
     }
+    
 
 
 }

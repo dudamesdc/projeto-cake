@@ -1,50 +1,86 @@
 
 
 <div class="container">
-  <!-- Perfil do Administrador -->
+  
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">Perfil do Administrador</h3>
     </div>
     <div class="panel-body">
-      <!-- Informações do Administrador -->
-      <h4>Nome do Administrador: João Silva</h4>
-      <h4>Email: joao.admin@example.com</h4>
+      
+      <h4>Olá, <?php echo $admin['username']?> </h4>
+      
 
-      <!-- Abas de Navegação para Usuários e Perfil -->
+      
       <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
-        <li><a data-toggle="tab" href="#view-profile">Ver Perfil</a></li>
-        
+        <li><?php echo $this->Html->link('perfil',['action' => 'view', $admin['id']],['class'=>'data-toglle="tab"']); ?></li>
+        <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
       </ul>
 
-      <!-- Conteúdo das Abas -->
+  
       <div class="tab-content">
-        <!-- Conteúdo da Aba "Usuários" -->
-        <div id="view-users" class="tab-pane fade in active">
-          <!-- Campo de Pesquisa de Usuários -->
-          <div class="form-group">
-            <label for="userSearch">Pesquisar Usuário:</label>
-            <input type="text" class="form-control" id="userSearch">
-          </div>
+          <div id="view-users" class="tab-pane fade in active">
+            
 
-          <!-- Lista de Usuários com Indicação de Ativo -->
-          <ul class="list-group">
-           
-            <?php foreach ($users as $user): ?>
-            <li class="list-group-item"><span class="active-indicator"></span><?php echo $this->Html->link($user['User']['username'],['controller'=>'Posts','action'=>'view', $user['User']['id']])?></li>
-            
-            <?php endforeach; ?>
-            
-          </ul>
-        </div>
+            <h3>Lista de Usuários</h3>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Criação</th>
+                  
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($users as $user): ?>
+                  <tr>
+                    <td><span class="active-indicator"></span><?php echo $this->Html->link($user['User']['username'],['controller'=>'Users','action'=>'view', $user['User']['id']])?></td>
+                    <td><?php echo $user['User']['created'] ?></td>
+                    
+                    <td><?php echo $this->Html->link('Deletar', ['controller' => 'Users', 'action' => 'delete', $user['User']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+      
+        
 
         
         <div id="view-profile" class="tab-pane fade">
-       
-          <p>Informações do perfil do administrador...</p>
+          <?php echo $this->Html->url(['action' => 'view', $admin['id']]); ?>
+          
         </div>
-
+      
+        <div id="view-posts" class="tab-pane fade">
+          
+            <h3>Lista de Posts</h3>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Data de Criação</th>
+                    <th>Última Atualização</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($posts as $post): ?>
+                    <tr>
+                      <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
+                      <td><?php echo $post['Post']['created'] ?></td>
+                      <td><?php echo $post['Post']['modified'] ?></td>
+                      <td>
+                        <?php echo $this->Html->link( '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', ['controller' => 'Posts', 'action' => 'delete', $post['Post']['id']], ['confirm' => 'Você tem certeza que deseja deletar este post?']) ?>
+                        <?php echo $this->Html->link('<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>', ['controller' => 'Posts', 'action' => 'edit', $post['Post']['id']]) ?>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+        </div>
         
       
 
