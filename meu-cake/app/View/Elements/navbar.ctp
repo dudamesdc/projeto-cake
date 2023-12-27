@@ -2,12 +2,13 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="sr-only"><a>algulma</a></span>
+                <span class="sr-only"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">TECNO BLOG</a>
+            
+            <?php echo $this->Html->link('TECNO BLOG', ['controller' => 'Posts', 'action' => 'index'], ['class' => 'navbar-brand']); ?>
         </div>
         
         <div class="collapse navbar-collapse" id="navbar-collapse">

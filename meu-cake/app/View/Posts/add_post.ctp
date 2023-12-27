@@ -14,12 +14,14 @@
 
        
 
-        <div class="checkbox">
-            <label>
-                <?php echo $this->Form->input('is_active', ['type' => 'checkbox', 'label' => 'ativo', 'hiddenField'=>'0']); ?>
-            </label>
-            
+        <div class="form-group">
+                    <?php
+                    $options = ['' => '', true => 'Ativo', false => 'Inativo'];
+                    echo $this->Form->select('is_active', $options, [ 'class' => 'form-control']);
+                    ?>
         </div>
+
+
         <?php echo $this->Form->button('Salvar', ['class' => 'btn btn-primary mt-3']); ?>
             <?php echo $this->Form->end(); ?>
     

@@ -40,16 +40,43 @@ class AppController extends Controller {
         'Session','RequestHandler', 'Paginator'
 
     );
-    // No seu controlador ou AppController
+    
     public $helpers = array('Js' => array('Jquery'));
 
-
-    function beforeFilter() {
+    public function beforeFilter() {
+        $this->Auth->allow(['index', 'view_post', 'add', 'login', 'view_profile', 'logout']);
+        if ($this->Auth->user('role') === 'admin') {
+            $this->Auth->allow(['edit_post', 'delete_post', 'user_index', 'admin_index','edit', 'delete']);
+        } elseif ($this->Auth->user('role') === 'author') {
+            $this->Auth->allow(['user_index', 'edit', 'delete_post', 'edit_post']);
+        }
+    }
+    
+    public function isAuthorized($user) {
+        return true; 
+    
         
+        if ($user['role'] === 'admin') {
+            return true; 
+    
         
-        $this->Auth->allow('index','view','add','login');       
+        $controller = $this->request->params['controller'];
+        $action = $this->request->params['action'];
+    
+        if ($action === 'user_index' && $user['role'] === 'author') {
+            return true; 
+        }
+    
+        return false; 
     }
     
 
 
-}
+    }
+
+}   
+    
+    
+
+
+

@@ -2,6 +2,7 @@
 
 class PostsController extends AppController {
     public $helpers = array ('Html','Form');
+    public $uses = array('User');
     
     public $components =[
         'Paginator','Session','RequestHandler'
@@ -9,24 +10,17 @@ class PostsController extends AppController {
         
     ];
     
-    
-    
     public function beforeFilter() {
         parent::beforeFilter();
-        if($this->Auth->user()){
-            $this->Auth->allow(['index', 'view','add','edit','delete','dashboard']);
-        }
-            
-        $this->Auth->allow(['index', 'view','add','login']);
-
+        $this->Auth->allow('delete');
         
-
     }
     
     
     
+    
 
-    public function view( $id) {
+    public function view_profile( $id) {
         
         $this->loadModel('User');
         
@@ -45,7 +39,7 @@ class PostsController extends AppController {
             $this->redirect(['action' => 'user_index']);
         }
         $condi=$this->applyFilter();
-         
+        $condi['Post.user_id'] = $id;
         $this->Paginator->settings = [
             'limit' => 5,
             'order' => ['Post.created' => 'desc'],
@@ -58,18 +52,13 @@ class PostsController extends AppController {
     }
     
 
-    public function add() {
+    public function add_post() {
         
         if ($this->request->is('post' )) {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
     
             
-            if (isset($this->request->data['Post']['is_active']) && $this->request->data['Post']['is_active'] !== '0') {
-                $this->request->data['Post']['status'] = true;
-            } else {
-                $this->request->data['Post']['status'] = false;
-            }
-    
+            
             if ($this->Post->save($this->request->data)) {
                 $this->Flash->success('Seu post foi adicionado.', ['element' => 'success']);
                 $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
@@ -78,31 +67,29 @@ class PostsController extends AppController {
                 $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
         }
-        
-        
+        $this->set('post', $this->Post->create());
+
+
     }
     
-    function delete($id) {
+    function delete_post($id) {
+        $this->loadModel('Post');
         if (!$this->request->is('post')) {
+            $id=$this->Post->id;
             if ($this->Post->delete($id)) {
-                if ($this->Auth->user('role') == 'user') {
-                    $this->Flash->success('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
-                    $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
-                } else {
-                    $this->Flash->error('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
-                    $this->redirect(['controller' => 'Users', 'action' => 'admin_index']);
-                }
+                $this->Flash->success('post deletado com sucesso.');
+                $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             } else {
-                $this->Flash->success('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
+                $this->Flash->error('Não foi possível deletar o post.');
                 $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
         } else {
-            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
+            $this->Flash->error('Não foi possível deletar o post.', ['element' => 'success']);
             $this->redirect(['controller' => 'Users', 'action' => 'index']);
         }
     }
     function edit() {
-        if (($this->request->is('post') || ($this->request->is('put')))) {
+        if (($this->request->is('post') )) {
             $id = $this->request->data['Post']['id'];
             $post = $this->Post->findById($id);
     
@@ -118,15 +105,7 @@ class PostsController extends AppController {
         }
     }
     
-    function deleteUser($id) {
-        if ($this->request->is('post')) {
-            if ($this->Post->delete($id)) {
-                $this->Flash->success('The post with id: ' . $id . ' has been deleted.', ['element' => 'success']);
-                $this->redirect(['controller' => 'users', 'action' => 'index']);
-            }
-            $this->Flash->error('The post with id: ' . $id . ' could not be deleted.', ['element' => 'success']);
-        }
-    }
+    
     
     public function logout(){
         return $this->redirect($this->Auth->logout());
@@ -153,20 +132,22 @@ class PostsController extends AppController {
                 }
                 
                 if (!empty($filtro['Post']['end'])) {
-                    $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['modified'])));
+                    $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['end'])));
                     $conditions['Post.modified <='] = $dataf;
                 }
             
                
             
-               if ($filtro['Post']['is_active']== '1') {
-                   $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
+               if(isset ($filtro['Post']['is_active'])&& $filtro['Post']['is_active'] != null) {
+                   if($filtro['Post']['is_active'] == true){
+                       $conditions['Post.is_active'] = true;
+                   }else{
+                          $conditions['Post.is_active'] = false;
+                   }
                }
-            
-               
-           }
+            }
            
-           return $conditions;
+        return $conditions;
     }
         
         public function index() {
@@ -197,6 +178,19 @@ class PostsController extends AppController {
             $this->set('posts', $this->Paginator->paginate('Post'));
             $this->loadModel('User');
             $this->set('user', $this->Auth->user());
+            
+    }
+    public function view_post($id) {
+        if (!$id) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+    
+        $post = $this->Post->findById($id);
+        if (!$post) {
+            throw new NotFoundException(__('Invalid post'));
+        }
+        $this->set('post', $post);
     }
     
 }
+

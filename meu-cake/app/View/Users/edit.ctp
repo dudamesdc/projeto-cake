@@ -19,8 +19,8 @@
                 <div class="col-sm-offset-2 col-sm-10">
                     <?php
                     echo $this->Form->button('Salvar Alterações', ['class' => 'btn btn-primary']);
-                    echo $this->Html->link('Cancelar', ['controller' => 'Posts', 'action' => 'index'], ['class' => 'btn btn-default']);
-                    ?>
+                     echo $this->Form->end();
+                   ?>
                 </div>
             </div>
 

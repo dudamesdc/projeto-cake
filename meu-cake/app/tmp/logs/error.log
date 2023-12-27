@@ -19180,3 +19180,1343 @@ Stack Trace:
 #3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
 #4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2023-12-27 11:56:15 Error: [PDOException] SQLSTATE[42601]: Syntax error: 7 ERROR:  syntax error at or near "newEntity"
+LINE 1: newEntity
+        ^
+Request URL: /posts/add
+Stack Trace:
+#0 /var/www/html/lib/Cake/Model/Datasource/DboSource.php(502): PDOStatement->execute(Array)
+#1 /var/www/html/lib/Cake/Model/Datasource/DboSource.php(468): DboSource->_execute('newEntity', Array)
+#2 /var/www/html/lib/Cake/Model/Datasource/DboSource.php(715): DboSource->execute('newEntity', Array, Array)
+#3 /var/www/html/lib/Cake/Model/Datasource/DboSource.php(648): DboSource->fetchAll('newEntity', Array, Array)
+#4 /var/www/html/lib/Cake/Model/Model.php(834): DboSource->query('newEntity', Array, Object(Post))
+#5 /var/www/html/app/Controller/PostsController.php(83): Model->__call('newEntity', Array)
+#6 [internal function]: PostsController->add()
+#7 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#8 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#9 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#10 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2023-12-27 12:49:21 Error: [Error] Call to a member function findById() on null
+Request URL: /Users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:49:37 Error: [Error] Call to a member function findById() on null
+Request URL: /Users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:49:38 Error: [Error] Call to a member function findById() on null
+Request URL: /Users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:58:45 Error: [Error] Call to a member function save() on null
+Request URL: /users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:59:18 Error: [Error] Call to a member function save() on null
+Request URL: /users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:59:24 Error: [Error] Call to a member function save() on null
+Request URL: /users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 12:59:32 Error: [Error] Call to a member function save() on null
+Request URL: /users/edit/14
+Stack Trace:
+#0 [internal function]: UsersController->edit('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:02:30 Error: [MissingViewException] View file "Users/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Users/index.ctp',
+)
+Request URL: /users
+Stack Trace:
+#0 /var/www/html/lib/Cake/View/View.php(470): View->_getViewFileName('Users/index')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(968): View->render(NULL, NULL)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(200): Controller->render()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:03:49 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /user/user_index
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 13:40:56 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:03 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:04 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:04 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:04 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /users/user_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:18 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /Users/admin_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(UsersController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:24 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:28 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:28 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:29 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:41:29 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:44:43 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:18 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:19 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:26 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:27 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:46 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:51 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:52 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:53 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 13:50:53 Error: [MissingComponentException] Component class authorizeComponent could not be found.
+Exception Attributes: array (
+  'class' => 'authorizeComponent',
+  'plugin' => false,
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Controller/ComponentCollection.php(53): ComponentCollection->load('authorize', Array)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(649): ComponentCollection->init(Object(PostsController))
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(188): Controller->constructClasses()
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:02:17 Error: [ParseError] syntax error, unexpected '}', expecting end of file
+Request URL: /Users/admin_index
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(567): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 14:02:17 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 14:02:17 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /Users/admin_index
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 14:02:33 Error: [ParseError] syntax error, unexpected '}', expecting end of file
+Request URL: /users/login
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(567): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 14:02:33 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 14:02:33 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/login
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 14:26:30 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 14:27:00 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:27:07 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:27:15 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:40:35 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:41:35 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:43:48 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:43:54 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:44:43 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:45:18 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:51:45 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 14:56:59 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 15:17:00 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:17:04 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:17:23 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:17:25 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:17:32 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:17:48 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:18:32 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:18:33 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:18:36 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:20:06 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:20:09 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:20:33 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:20:34 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:20:37 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:11 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:16 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:33 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:34 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:34 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:35 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:21:39 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:22:00 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:22:36 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:23:01 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:23:02 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:23:03 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:23:03 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:23:04 Error: [MissingControllerException] Controller class LoginController could not be found.
+Exception Attributes: array (
+  'class' => 'LoginController',
+  'plugin' => NULL,
+)
+Request URL: /login
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:19 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:28 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios/
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:31 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:43 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:43 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:44 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:44 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:44 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:24:44 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:27:51 Error: [MissingControllerException] Controller class UsuariosController could not be found.
+Exception Attributes: array (
+  'class' => 'UsuariosController',
+  'plugin' => NULL,
+)
+Request URL: /usuarios
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:28:33 Error: [MissingControllerException] Controller class PostagensController could not be found.
+Exception Attributes: array (
+  'class' => 'PostagensController',
+  'plugin' => NULL,
+)
+Request URL: /postagens
+Stack Trace:
+#0 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2023-12-27 15:30:40 Error: [NotFoundException] Invalid post
+Request URL: /posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 15:32:35 Error: [NotFoundException] Invalid post
+Request URL: /posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 15:32:39 Error: [NotFoundException] Invalid post
+Request URL: /posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:01:17 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:01:29 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:03:43 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:03:46 Error: [NotFoundException] Invalid post
+Request URL: /Posts/view/14
+Stack Trace:
+#0 [internal function]: PostsController->view('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:03:49 Error: [ArgumentCountError] Too few arguments to function PostsController::view(), 0 passed and exactly 1 expected
+Request URL: /Posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:04:01 Error: [ArgumentCountError] Too few arguments to function PostsController::view(), 0 passed and exactly 1 expected
+Request URL: /Posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:04:06 Error: [ArgumentCountError] Too few arguments to function PostsController::view(), 0 passed and exactly 1 expected
+Request URL: /Posts/view
+Stack Trace:
+#0 [internal function]: PostsController->view()
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:11:33 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 [internal function]: PostsController->delete('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:12:25 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 [internal function]: PostsController->delete('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:12:32 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 [internal function]: PostsController->delete('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:12:51 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 [internal function]: PostsController->delete('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:12:52 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 [internal function]: PostsController->delete('14')
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2023-12-27 16:24:07 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(567): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:24:07 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:24:07 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:24:24 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/PostsController.php(3): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(567): include('/var/www/html/a...')
+#3 [internal function]: App::load('PostsController')
+#4 [internal function]: spl_autoload_call('PostsController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('PostsController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:24:24 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:24:24 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:04 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(567): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:04 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:04 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:08 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:08 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:08 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:09 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:09 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:09 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:09 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:09 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:09 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:09 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:09 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:09 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:09 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:09 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:09 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:10 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:10 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:10 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:45:10 Error: [ParseError] syntax error, unexpected end of file, expecting function (T_FUNCTION) or const (T_CONST)
+Request URL: /users/logout
+Stack Trace:
+#0 [internal function]: App::load('AppController')
+#1 /var/www/html/app/Controller/UsersController.php(2): spl_autoload_call('AppController')
+#2 /var/www/html/lib/Cake/Core/App.php(547): include('/var/www/html/a...')
+#3 [internal function]: App::load('UsersController')
+#4 [internal function]: spl_autoload_call('UsersController')
+#5 /var/www/html/lib/Cake/Routing/Dispatcher.php(266): class_exists('UsersController')
+#6 /var/www/html/lib/Cake/Routing/Dispatcher.php(235): Dispatcher->_loadController(Object(CakeRequest))
+#7 /var/www/html/lib/Cake/Routing/Dispatcher.php(158): Dispatcher->_getController(Object(CakeRequest), Object(CakeResponse))
+#8 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2023-12-27 16:45:10 Error: Fatal Error (16): Exception thrown without a stack frame in [Unknown, line 0]
+2023-12-27 16:45:10 Error: [FatalErrorException] Exception thrown without a stack frame
+Request URL: /users/logout
+Stack Trace:
+#0 /var/www/html/lib/Cake/Error/ErrorHandler.php(212): ErrorHandler::handleFatalError(16, 'Exception throw...', 'Unknown', 0)
+#1 /var/www/html/lib/Cake/Core/App.php(970): ErrorHandler::handleError(16, 'Exception throw...', 'Unknown', 0, Array)
+#2 /var/www/html/lib/Cake/Core/App.php(943): App::_checkFatalError()
+#3 [internal function]: App::shutdown()
+#4 {main}
+2023-12-27 16:51:15 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:52:04 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:52:12 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:52:21 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:52:25 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:53:21 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:53:21 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:53:22 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:53:22 Error: [MissingActionException] Action PostsController::delete() could not be found.
+Exception Attributes: array (
+  'controller' => 'PostsController',
+  'action' => 'delete',
+)
+Request URL: /Posts/delete/14
+Stack Trace:
+#0 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#2 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2023-12-27 16:53:30 Error: [Error] Call to a member function delete() on null
+Request URL: /Posts/delete_post/19
+Stack Trace:
+#0 [internal function]: PostsController->delete_post(NULL)
+#1 /var/www/html/lib/Cake/Controller/Controller.php(499): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /var/www/html/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 /var/www/html/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest))
+#4 /var/www/html/app/webroot/index.php(117): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

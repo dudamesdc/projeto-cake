@@ -1,22 +1,10 @@
 <?php
 class UsersController extends AppController
-{
+{   
+    
+    
     public $helpers = array ('Html','Form');
-    public function beforeFilter() {
-        parent::beforeFilter();
-
-        
-        if ($this->Auth->user()) {
-            $role = $this->Auth->user('role');
-            if ($role == 'admin') {
-                $this->Auth->allow(['admin_index']);
-            }
-            else{
-                $this->Auth->allow([ 'user_index']);
-            
-            }
-        }
-    }
+    
 
     public function index() {
         $this->User->recursive = 0;
@@ -41,41 +29,50 @@ class UsersController extends AppController
                 $role = $this->request->data('User.role');
                 if ($role == 'admin') {
                     $this->Flash->success('Admin cadastrado com sucesso.');
-                    $this->redirect(['action' => 'admin_index']);
+                    $this->redirect(['controller'=>'posts','action' => 'index']);
                 } else {
                     $this->Flash->error('Usuário cadastrado com sucesso.');
-                    $this->redirect(['action' => 'user_index']);
+                    $this->redirect(['controller'=>'posts','action' => 'index']);
                 }
             }
         }
     }
 
-    public function edit($id = null) {
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Usuário não encontrado'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
+    function edit() {
+        if (($this->request->is('post')|| $this->request->is('put') )) {
+            
+            $user = $this->Auth->user();
+    
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('Usuário salvo com sucesso' ,[['element' => 'success']]));
-                $this->redirect(array('action' => 'user_index'));
-            } else {
-                $this->Flash->error(__('Usuário não pode ser salvo. Por favor, tente novamente.' ,[['element' => 'success']]));
+                $this->Flash->success(__('Dados pessoais atualizados'));
+                if($user('role')=='admin'){
+                    $this->redirect(['controller' => 'Users', 'action' => 'admin_index']);
+                }
+                else{
+                    $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
+                }
+                return $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
+            $this->Flash->error(__('Não foi possível atualizar seus dados pessoais.'));
         } else {
-            $this->request->data = $this->User->findById($id);
-            unset($this->request->data['User']['password']);
+            $id = $this->request->params['pass'][0];
+            $user = $this->User->findById($id);
+            $this->request->data = $user;
         }
-        $this->set('user', $this->Auth->user());
     }
+    
     public function delete($id = null) {
         
         $this->User->id = $id;
+        $posts=$this->Post->find('all',array('conditions'=>array('Post.user_id'=>$id)));
+        foreach ($posts as $post) {
+            $this->Post->delete($post['Post']['id']);
+        }
         if (!$this->User->exists()) {
             $this->Flash->error(__('Usuário não encontrado', ['element' => 'set']));
             $this->redirect(array('action' => 'admin_index'));
         }
-        if ($this->User->delete()) {
+        if ($this->User->delete() ) {
             $this->Flash->success(__('Usuário deletado', ['element' => 'success']));
             $this->redirect(array('action' => 'admin_index'));
         }

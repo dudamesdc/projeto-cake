@@ -26,6 +26,15 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
+
+
+Router::connect('/login', ['controller' => 'users', 'action' => 'login']);
+Router::connect('/Users', ['controller' => 'Posts', 'url' => 'add']);
+Router::connect('/Users/user_index', ['controller' => 'users', 'action' => 'login']);
+Router::connect('admin_index', ['controller' => 'users', 'action' => 'login']);
+Router::connect('/users/view/:id', ['controller' => 'users', 'action' => 'view']);
+Router::connect('/postagens', ['controller' => 'posts', 'action' => 'index']);
+
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
@@ -44,12 +53,5 @@ Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 	require CAKE . 'Config' . DS . 'routes.php';
 
 
-Router::connect('/login', ['controller' => 'Users', 'action' => 'login']);
-Router::connect('/users', ['controller' => 'Posts', 'url' => 'index']);
 
-Router::connect('/admin_index', ['controller' => 'Users', 'action' => 'admin_index']);
-Router::connect('/user_index', ['controller' => 'Users', 'action' => 'user_index']);
-Router::connect('/users', ['controller' => 'Users', 'action' => 'add']);
-Router::connect('Users/view', ['controller' => 'Users', 'action' => 'view']);
-// Em algum lugar nas rotas do CakePHP
 

@@ -7,18 +7,18 @@
             </h3>
         </div>
         <div class="panel-body">
-            <!-- Informações do usuário, como avatar e detalhes -->
+            
             <div class="row">
                 <div>
                     
-                    <?php echo $this->Html->link('Visualizar Perfil', ['action' => 'view', $user['id']], ['class' => 'btn btn-primary btn-block', 'role' => 'button']); ?>
+                    <?php echo $this->Html->link('Editar Dados pessoais', ['action' => 'edit', $user['id']], ['class' => 'btn btn-primary btn-block', 'role' => 'button']); ?>
                 </div>
                 <div>
-                    <!-- Título da seção "Meus Posts" -->
+                    
                     <div class="row" style="margin-bottom: 40px;"></div>
   
                     
-                    <!-- Opção de resetar filtro -->
+                    
                     <?php
                     if ($this->request->query('reset')) {
                         $this->Session->delete('filter');
@@ -26,10 +26,10 @@
                     }
                     ?>
 
-                    <!-- Aplicar filtro (se aplicável) -->
+                    
                     <?php echo $this->element('applyFilter'); ?>
                     <div class="row" style="margin-bottom: 40px;"></div>
-                    <!-- Tabela de Posts -->
+                    
                     <table class='table'>
                         <thead>
                             <tr>
@@ -47,7 +47,7 @@
                                     <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
                                     <td>
                                         <?php
-                                        // Ícones do Bootstrap para deletar e editar
+                                        
                                         echo $this->Html->link(
                                             '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>',
                                             ['controller' => 'posts', 'action' => 'delete', $post['Post']['id']],
