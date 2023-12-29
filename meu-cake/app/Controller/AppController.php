@@ -31,52 +31,37 @@ App::uses('Controller', 'Controller');
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    public $components = array(
-        'Flash',
-        'Auth' => array(
-            'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
-            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home')
-        ),
-        'Session','RequestHandler', 'Paginator'
-
-    );
+    
     
     public $helpers = array('Js' => array('Jquery'));
 
-    public function beforeFilter() {
-        $this->Auth->allow(['index', 'view_post', 'add', 'login', 'view_profile', 'logout']);
-        if ($this->Auth->user('role') === 'admin') {
-            $this->Auth->allow(['edit_post', 'delete_post', 'user_index', 'admin_index','edit', 'delete']);
-        } elseif ($this->Auth->user('role') === 'author') {
-            $this->Auth->allow(['user_index', 'edit', 'delete_post', 'edit_post']);
-        }
+    public $components = array(
+        'Flash' => array(
+            'params' => array(
+                'class' => array(
+                    'success' => 'alert alert-success',
+                    'error' => 'alert alert-danger'
+                )
+            )
+        ),
+        'Auth' => array(
+            'loginRedirect' => array('controller' => 'posts', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'username',
+                        'password' => 'password',
+                    ],
+                ],
+            ],
+        ),
+        'Session',
+        'RequestHandler',
+        'Paginator',
+    );
+    function beforeFilter() {
+        $this->Auth->allow('index','view','logout','add_user','login','user_index','view_profile','admin_index');
     }
     
-    public function isAuthorized($user) {
-        return true; 
-    
-        
-        if ($user['role'] === 'admin') {
-            return true; 
-    
-        
-        $controller = $this->request->params['controller'];
-        $action = $this->request->params['action'];
-    
-        if ($action === 'user_index' && $user['role'] === 'author') {
-            return true; 
-        }
-    
-        return false; 
-    }
-    
-
-
-    }
-
-}   
-    
-    
-
-
-
+}

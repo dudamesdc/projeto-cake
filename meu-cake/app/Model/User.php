@@ -8,10 +8,7 @@ class User extends AppModel {
                 'rule' => array('notBlank'),
                 'message' => 'A username is required'
             ),
-            'unique'=> array(
-                'rule' => 'isUnique',
-                'message' => 'Esse nome já existe!'
-            )
+            
         ),
         'password' => array(
             'required' => array(
@@ -37,10 +34,6 @@ class User extends AppModel {
             'required' => array(
                 'rule' => array('notBlank'),
                 'message' => 'A cpf is required'
-            ),
-            'unique'=> array(
-                'rule' => 'isUnique',
-                'message' => 'Esse cpf já existe!'
             )
         )
     );

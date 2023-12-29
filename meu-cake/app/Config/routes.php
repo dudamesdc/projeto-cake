@@ -29,11 +29,11 @@ Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 
 
 Router::connect('/login', ['controller' => 'users', 'action' => 'login']);
-Router::connect('/Users', ['controller' => 'Posts', 'url' => 'add']);
-Router::connect('/Users/user_index', ['controller' => 'users', 'action' => 'login']);
-Router::connect('admin_index', ['controller' => 'users', 'action' => 'login']);
-Router::connect('/users/view/:id', ['controller' => 'users', 'action' => 'view']);
+Router::connect('/users', ['controller' => 'Posts', 'url' => 'add']);
+
+
 Router::connect('/postagens', ['controller' => 'posts', 'action' => 'index']);
+
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.

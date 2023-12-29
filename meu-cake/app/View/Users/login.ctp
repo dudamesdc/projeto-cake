@@ -22,8 +22,7 @@
         <label for="inputPassword" class="sr-only">Password</label>
         <?php
             echo $this->Form->input('password', array(
-                'type' => 'text',
-                'id' => 'inputPassword',
+                
                 'class' => 'form-control',
                 'placeholder' => 'Password',
                 'required' => 'required'

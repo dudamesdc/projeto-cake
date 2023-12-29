@@ -5,12 +5,8 @@ class UsersController extends AppController
     
     public $helpers = array ('Html','Form');
     
-
-    public function index() {
-        $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
-    }
-
+    public $uses=['User','Post'];
+    
     public function view($id = null) {
         if (!$this->User->exists($id)) {
             throw new NotFoundException(__('Invalid user'));
@@ -18,47 +14,58 @@ class UsersController extends AppController
         $this->set('user', $this->User->findById($id));
     }
 
-    public function add() {
+    public function add_user() {
         if ($this->request->is('post')) {
             $this->User->create();
     
             if ($this->User->save($this->request->data)) {
                 
-                $this->Auth->login($this->request->data);
+                
     
                 $role = $this->request->data('User.role');
                 if ($role == 'admin') {
                     $this->Flash->success('Admin cadastrado com sucesso.');
                     $this->redirect(['controller'=>'posts','action' => 'index']);
-                } else {
-                    $this->Flash->error('Usuário cadastrado com sucesso.');
+                }else {
+                    $this->Flash->success('Usuário cadastrado com sucesso.');
                     $this->redirect(['controller'=>'posts','action' => 'index']);
                 }
+            } else {
+                $this->Flash->error('Não foi possível cadastrar o usuário.');
             }
+
         }
     }
 
-    function edit() {
-        if (($this->request->is('post')|| $this->request->is('put') )) {
-            
-            $user = $this->Auth->user();
-    
+    public function edit($id = null) {
+        $this->User->id = $id;
+        
+        if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('Dados pessoais atualizados'));
-                if($user('role')=='admin'){
-                    $this->redirect(['controller' => 'Users', 'action' => 'admin_index']);
+                if($this->Auth->user('role')=='admin'){
+                    $this->Flash->success(__('Usuário salvo.', ['element' => 'success']));
+                    $this->redirect(array('action' => 'admin_index'));
+                }else{
+                    $this->Flash->success(__('Usuário salvo.', ['element' => 'success']));
+                    $this->redirect(array('action' => 'user_index'));
                 }
-                else{
-                    $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
+            } else {
+                if($this->Auth->user('role')=='admin'){
+                    $this->Flash->error(__('Não foi possível salvar o usuário.', ['element' => 'success']));
+                    $this->redirect(array('action' => 'admin_index'));
+                }else{
+                    $this->Flash->error(__('Não foi possível salvar o usuário.', ['element' => 'success']));
+                    $this->redirect(array('action' => 'user_index'));
                 }
-                return $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
             }
-            $this->Flash->error(__('Não foi possível atualizar seus dados pessoais.'));
+
         } else {
+            
             $id = $this->request->params['pass'][0];
             $user = $this->User->findById($id);
             $this->request->data = $user;
         }
+        $this->set('user', $this->Auth->user());
     }
     
     public function delete($id = null) {
@@ -79,7 +86,9 @@ class UsersController extends AppController
         $this->Flash->error(__('Usuário não pode ser deletado', ['element' => 'success']));
         $this->redirect(array('action' => 'admin_index'));
     }
+    
     public function login() {
+        //"db20acb0545cba58363aabb220f19457767e6024" --> senha 1234
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
                 $role = $this->Auth->user('role');
@@ -136,7 +145,7 @@ class UsersController extends AppController
         return $conditions;
  }
     public function admin_index($id=null){
-        $this->loadModel('Post');
+        
         
         if ($this->request->is('post')) {
                 
@@ -182,7 +191,7 @@ class UsersController extends AppController
             $this->redirect(['action' => 'user_index']);
         }
         $condi=$this->applyFilter();
-         
+        $condi['Post.user_id']=$this->Auth->user('id');
         $this->Paginator->settings = [
             'limit' => 5,
             'order' => ['Post.created' => 'desc'],

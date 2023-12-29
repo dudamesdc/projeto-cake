@@ -8,12 +8,13 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                
+                <div class="col-md-12">
+                    <?php echo $this->Html->link('Editar Dados Pessoais', ['action' => 'edit', $admin['id']], ['class' => 'btn btn-primary btn-block', 'role' => 'button']); ?>
+                </div>
                 <div class="col-md-12">
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
                         <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
-                        <li><?php echo $this->Html->link('Perfil', ['action' => 'edit', $admin['id']]); ?></li>
                     </ul>
                     <div class="tab-content">
                         <div id="view-users" class="tab-pane fade in active">
@@ -23,7 +24,7 @@
                                 <thead>
                                     <tr>
                                         <th>Usuário</th>
-                                        <th>Data de Criação</th>
+                                        <th>função</th>
                                         <th>Ações</th>
                                     </tr>
                                 </thead>
@@ -34,13 +35,9 @@
                                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                                 <?php echo $this->Html->link($user['User']['username'], ['controller' => 'Users', 'action' => 'view', $user['User']['id']]) ?>
                                             </td>
-                                            <td><?php echo $user['User']['created'] ?></td>
+                                            <td><?php echo $user['User']['role'] ?></td>
                                             <td>
-                                                <?php echo $this->Html->link(
-                                                    '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',
-                                                    ['controller' => 'Users', 'action' => 'edit', $user['User']['id']],
-                                                    ['escape' => false]
-                                                ); ?>
+                                               
                                                 <?php echo $this->Html->link(
                                                     '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>',
                                                     ['controller' => 'Users', 'action' => 'delete', $user['User']['id']],
@@ -67,13 +64,13 @@
                                 <tbody>
                                     <?php foreach ($posts as $post): ?>
                                         <tr>
-                                            <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view_post', $post['Post']['id']]) ?></td>
+                                            <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
                                             <td><?php echo $post['Post']['created'] ?></td>
                                             <td><?php echo $post['Post']['modified'] ?></td>
                                             <td>
                                                 <?php echo $this->Html->link(
                                                     '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',
-                                                    ['controller' => 'Posts', 'action' => 'edit_post', $user['User']['id']],
+                                                    ['controller' => 'Posts', 'action' => 'edit',$post['Post']['id'] ],
                                                     ['escape' => false]
                                                 ); ?>
                                                 <?php echo $this->Html->link(

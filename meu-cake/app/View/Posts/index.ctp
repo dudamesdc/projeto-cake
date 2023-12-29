@@ -1,14 +1,19 @@
 <div class="container">
+    
     <div class="panel panel-default">
         <div class="panel-heading">
-            <?php echo $this->element('applyFilter'); ?>
+            <?php 
+                if($nada==false){
+                    echo $this->element('applyFilter');
+                }
+            ?>
         </div>
         <div class="panel-body">
             <?php foreach ($posts as $post): ?>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <?php echo $this->Html->link($post['Post']['title'], ['action' => 'view', $post['User']['id']]); ?>
+                            <?php echo $this->Html->link($post['Post']['title'], ['action' => 'view', $post['Post']['id']]); ?>
                         </h3>
                     </div>
                     
@@ -29,7 +34,7 @@
                     <div class="panel-footer">
                         <?php echo $this->Html->link(
                             'Ver Post',
-                            ['action' => 'view', $post['User']['id']],
+                            ['action' => 'view', $post['Post']['id']],
                             ['class' => 'btn btn-primary btn-xs', 'role' => 'button']
                         ); ?>
                         <?php echo $this->Html->link(
@@ -47,7 +52,7 @@
                         <li><?php echo $this->Paginator->prev('« Anterior'); ?></li>
                         <li><?php echo $this->Paginator->numbers(); ?></li>
                         <li><?php echo $this->Paginator->next('Próximo »'); ?></li>
-                    </ul>
+        </ul>
         </div>
     </div>
 </div>

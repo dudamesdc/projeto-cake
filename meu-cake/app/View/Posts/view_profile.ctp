@@ -52,7 +52,7 @@
                                 <div class="panel-footer">
                                     <?php echo $this->Html->link(
                                         'Ver Post',
-                                        ['action' => 'view', $post['User']['id']],
+                                        ['action' => 'view', $post['Post']['id']],
                                         ['class' => 'btn btn-primary btn-xs', 'role' => 'button']
                                     ); ?>
                                     

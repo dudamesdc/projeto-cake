@@ -2,7 +2,7 @@
 
 <div class="container mt-4">
     
-        <?php echo $this->Form->create('Post', ['url' => ['action'=>'add'] ]); ?>
+        <?php echo $this->Form->create('Post', ['url' => ['action'=>'add_post'] ]); ?>
         <div class="form-group">
             <?php $this->Form->label('title', 'título'); ?>
             <?php echo $this->Form->input('title', ['class' => 'form-control', 'placeholder' => 'Digite o título', 'type' => 'text']); ?>

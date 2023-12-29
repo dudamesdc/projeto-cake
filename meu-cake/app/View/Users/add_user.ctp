@@ -52,6 +52,12 @@
         ?>
         
     </div>
+    <div class="form-group">
+                    <?php
+                    $options = [ 'author' => 'Usuário', 'admin' => 'Administrador'];
+                    echo $this->Form->select('role', $options, [ 'class' => 'form-control']);
+                    ?>
+        </div>
 
 
     <div class="form-group">

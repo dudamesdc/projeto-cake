@@ -1,26 +1,34 @@
-
-
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Perfil do Usuário</h3>
         </div>
         <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="user-info">
+                        <div class="info-item">
+                            <dt>Nome de Usuário:</dt>
+                            <?php echo h($user['User']['username']); ?>
+                        </div>
 
-            <dl class="dl-horizontal">
-                    <dt>Nome de Usuário:</dt>
-                    <dd><?php echo h($user['User']['username']); ?></dd>
+                        <div class="info-item">
+                            <dt>E-mail:</dt>
+                            <?php echo h($user['User']['email']); ?>
+                        </div>
 
-                    <dt>E-mail:</dt>
-                    <dd><?php echo h($user['User']['email']); ?></dd>
+                        <div class="info-item">
+                            <dt>CPF:</dt>
+                            <?php echo h($user['User']['cpf']); ?>
+                        </div>
 
-                    <dt>CPF:</dt>
-                    <dd><?php echo h($user['User']['cpf']); ?></dd>
-
-                    <dt>Data de Registro:</dt>
-                    <dd><?php echo h($user['User']['created']); ?></dd>
-            </dl>
-
+                        <div class="info-item">
+                            <dt>Data de Registro:</dt>
+                            <?php echo date('d-m-Y H:i:s', strtotime($user['User']['created'])); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -50,7 +50,7 @@
                                         
                                         echo $this->Html->link(
                                             '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>',
-                                            ['controller' => 'posts', 'action' => 'delete', $post['Post']['id']],
+                                            ['controller' => 'posts', 'action' => 'delete_post', $post['Post']['id']],
                                             ['escape' => false, 'confirm' => 'Tem certeza?']
                                         );
 
