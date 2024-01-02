@@ -5,12 +5,15 @@
         </div>
         <div class="panel-body">
             <p class="post-info">
-                Criado em <?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?> por <?php echo h($post['User']['username']); ?>
+                <strong>Criado em: <?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?> 
+                por: <?php echo h($post['User']['username']); ?> 
+                com última atualização em: <?php echo date('d-m-Y H:i:s', strtotime($post['Post']['modified'])); ?></strong>
             </p>
             <p class="post-body">
-            <?php echo wordwrap(h($post['Post']['body']), 117, "\n<br>", true); ?>
+                <?php echo nl2br(h($post['Post']['body'])); ?>
             </p>
         </div>
+
         <div class="panel-footer">
             <?php 
                 if( $user) {

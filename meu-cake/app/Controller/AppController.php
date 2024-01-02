@@ -62,6 +62,7 @@ class AppController extends Controller {
     );
     function beforeFilter() {
         $this->Auth->allow('index','view','logout','add_user','login','user_index','view_profile','admin_index');
+        
     }
     
 }

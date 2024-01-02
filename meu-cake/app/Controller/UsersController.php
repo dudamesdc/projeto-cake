@@ -16,7 +16,10 @@ class UsersController extends AppController
 
     public function add_user() {
         if ($this->request->is('post')) {
-            $this->User->create();
+            
+            
+                $this->User->create();
+
     
             if ($this->User->save($this->request->data)) {
                 
@@ -38,7 +41,7 @@ class UsersController extends AppController
     }
 
     public function edit($id = null) {
-        $this->User->id = $id;
+        
         
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
@@ -58,6 +61,9 @@ class UsersController extends AppController
                     $this->redirect(array('action' => 'user_index'));
                 }
             }
+            if (empty($this->request->data)) {
+                $this->request->data = $this->Post->findById($id);
+            }
 
         } else {
             
@@ -69,7 +75,11 @@ class UsersController extends AppController
     }
     
     public function delete($id = null) {
-        
+        if(!($this->Auth->user('role')==='admin') ){
+            $this->Flash->error(__('Você não tem permissão para apagar um usuario')) ;
+            $this->redirect(array('controller'=>'Users','action' => 'login'));
+            
+        }
         $this->User->id = $id;
         $posts=$this->Post->find('all',array('conditions'=>array('Post.user_id'=>$id)));
         foreach ($posts as $post) {
@@ -113,8 +123,13 @@ class UsersController extends AppController
     private function applyFilter(){
         $conditions = array();
 
-        if($this->Session->check('filter')){
-            $filtro = $this->Session->read('filter');
+        if($this->Session->check('admin_filter')||$this->Session->check('user_filter')){
+            $filtro = $this->Session->read('user_filter');
+            if($this->Session-> read('admin_filter')){
+                $filtro = $this->Session->read('admin_filter');
+            }
+            
+            
             
             if (!empty($filtro['Post']['content'])) {
                 $conditions['OR'] = [
@@ -152,14 +167,14 @@ class UsersController extends AppController
                 
             $filtro = $this->request->data;
             
-            $this->Session->write('filter', $filtro);
+            $this->Session->write('admin_filter', $filtro);
             
 
     
         }
         if ($this->request->query('reset')) {
-            $this->Session->delete('filter');
-            $this->redirect(['action' => 'index']);
+            $this->Session->delete('admin_filter');
+            $this->redirect(['action' => 'admin_index']);
         }
         $condi=$this->applyFilter();
          
@@ -169,10 +184,27 @@ class UsersController extends AppController
             'conditions' => $condi
         ];
 
-    
+        $nada=true;
         $this->set('admin',  $this->Auth->user());
         $this->set('users', $this->User->find('all'));
-        $this->set('posts', $this->Paginator->paginate('Post'));
+        $posts = $this->Paginator->paginate('Post');
+            $this->set('posts', $posts);
+        if(empty($posts)){
+            if($this->request->action=='admin_index' && $this->Session->check('admin_filter')){
+                echo $this->Flash->error('Nenhum post encontrado');
+                $nada = false;
+                $this->Session->delete('admin_filter');
+            }else if ($this->request->action=='user_index' && $this->Session->check('user_filter')){
+                echo $this->Flash->error('Nenhum post encontrado');
+                $nada = false;
+                $this->Session->delete('user_filter');
+            }
+            
+        }
+        $this->loadModel('User');
+        $this->set('user', $this->Auth->user());
+        $this->set('nada', $nada);
+
     }
     
     public function user_index(){
@@ -181,13 +213,13 @@ class UsersController extends AppController
                 
             $filtro = $this->request->data;
             
-            $this->Session->write('filter', $filtro);
+            $this->Session->write('user_filter', $filtro);
             
 
     
         }
         if ($this->request->query('reset')) {
-            $this->Session->delete('filter');
+            $this->Session->delete('user_filter');
             $this->redirect(['action' => 'user_index']);
         }
         $condi=$this->applyFilter();
@@ -197,9 +229,25 @@ class UsersController extends AppController
             'order' => ['Post.created' => 'desc'],
             'conditions' => $condi
         ];
+        $nada=true;
         $this->loadModel('Post');
-        $this->set('posts', $this->Paginator->paginate('Post'));
+        $posts = $this->Paginator->paginate('Post');
+            $this->set('posts', $posts);
         $this->set('user', $this->Auth->user());
+        if(empty($posts)){
+            if($this->request->action=='admin_index' && $this->Session->check('admin_filter')){
+                echo $this->Flash->error('Nenhum post encontrado');
+                $nada = false;
+                $this->Session->delete('admin_filter');
+            }else if ($this->request->action=='user_index' && $this->Session->check('user_filter')){
+                echo $this->Flash->error('Nenhum post encontrado');
+                $nada = false;
+                $this->Session->delete('user_filter');
+            }
+            
+        }
+        
+        $this->set('nada', $nada);
     }
    
     

@@ -13,11 +13,12 @@
                 </div>
                 <div class="col-md-12">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#view-users">Usuários</a></li>
-                        <li><a data-toggle="tab" href="#view-posts">Posts</a></li>
+                        <li class="active"><a data-toggle="tab" href="#view-posts">Posts</a></li>
+                        <li ><a data-toggle="tab" href="#view-users">Usuários</a></li>
+                        
                     </ul>
                     <div class="tab-content">
-                        <div id="view-users" class="tab-pane fade in active">
+                        <div id="view-users" class="tab-pane fade ">
                             <h3>Lista de Usuários</h3>
                             <!-- Tabela de Usuários -->
                             <table class="table table-striped">
@@ -49,8 +50,12 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="view-posts" class="tab-pane fade">
-                            <h3>Lista de Posts</h3>
+                        <div id="view-posts" class="tab-pane fade in active">
+                            <?php 
+                            if($nada):?>
+                                <?php echo $this->element('applyFilter');?>
+                            <?php endif ?>
+                                <h3>Lista de Posts</h3>
                             <!-- Tabela de Posts -->
                             <table class="table table-striped">
                                 <thead>
@@ -84,6 +89,9 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        
+                            
                     </div>
                 </div>
             </div>

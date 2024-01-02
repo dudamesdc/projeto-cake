@@ -50,6 +50,7 @@ class PostsController extends AppController {
     public function add_post() {
         
         if ($this->request->is('post' )) {
+           
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
     
             
@@ -74,9 +75,14 @@ class PostsController extends AppController {
     }
     
     function delete_post($id) {
-        $this->loadModel('Post');
+       
         if (!$this->request->is('post')) {
-            
+           $post=$this->Post->findById($id);
+                if(!($this->Auth->user('role')==='admin') && !($post['Post']['user_id']===$this->Auth->user('id'))){
+                    $this->Flash->error(__('Você não tem permissão para deletar um post para outro usuário', ['element' => 'success']));
+                    $this->redirect(array('controller'=>'Users','action' => 'login'));
+                    
+                }
             if ($this->Post->delete($id)) {
                 if($this->Auth->user('role')=='admin'){
                     $this->Flash->success('O post com id: ' . $id . ' foi deletado.', ['element' => 'success']);
@@ -101,16 +107,21 @@ class PostsController extends AppController {
         }
     }
     function edit() {
+        $post=$this->Post->find('all');
+            
+        $this->set('post',$post);
         if (($this->request->is('post') || ($this->request->is('put')))) {
             $id = $this->request->data['Post']['id'];
             $post = $this->Post->findById($id);
-    
+            
+            
             if ($this->Post->save($this->request->data)) {
                 if($this->Auth->user('role')=='admin'){
                     $this->Flash->success(__('Seu post foi atualizado.'), ['element' => 'success']);
                     return $this->redirect(['controller' => 'Users', 'action' => 'admin_index']);
                 }
                 else{
+                    
                     $this->Flash->success(__('Seu post foi atualizado.'), ['element' => 'success']);
                     return $this->redirect(['controller' => 'Users', 'action' => 'user_index']);
                 }
@@ -118,9 +129,22 @@ class PostsController extends AppController {
             }-
             $this->Flash->error(__('Não foi possível atualizar seu post.'), ['element' => 'success']);
         } else {
-            $id = $this->request->params['pass'][0];
-            $post = $this->Post->findById($id);
-            $this->request->data = $post;
+            
+           
+            
+                $id = $this->request->params['pass'][0];
+                $post = $this->Post->findById($id);
+                if(!($this->Auth->user('role')==='admin') && !($post['Post']['user_id']===$this->Auth->user('id'))){
+                    $this->Flash->error(__('Você não tem permissão para editar um post para outro usuário', ['element' => 'success']));
+                    $this->redirect(array('controller'=>'Users','action' => 'login'));
+                    
+                }else{
+                    $this->request->data = $post;
+                }
+
+                
+            
+            
         }
     }
     
@@ -146,12 +170,12 @@ class PostsController extends AppController {
                }
                if (!empty($filtro['Post']['create'])) {
                     $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
-                    $conditions['Post.created >='] = $datai;
+                    $conditions['Post.created >= '] = $datai;
                 }
                 
                 if (!empty($filtro['Post']['end'])) {
                     $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['end'])));
-                    $conditions['Post.modified <='] = $dataf;
+                    $conditions['Post.modified <= '] = $dataf;
                 }
             
                
@@ -165,13 +189,15 @@ class PostsController extends AppController {
                }
             }
             
-         debug($conditions);  
+          
         return $conditions;
+
     }
         
-        public function index() {
+    public function index() {
+            $post=$this->Post->find('all');
             
-            
+            $this->set('post',$post);
             
             if ($this->request->is('post')) {
                 
@@ -194,9 +220,16 @@ class PostsController extends AppController {
                 'order' => ['Post.created' => 'desc'],
                 'conditions' => $condi
             ];
-            
-            $this->set('posts', $this->Paginator->paginate('Post'));
-            
+            $nada=true;
+            $posts = $this->Paginator->paginate('Post');
+            $this->set('posts', $posts);
+
+            if(empty($posts)&& $this->Session->check('filter')){
+                echo $this->Flash->error('Nenhum post encontrado');
+                $this->Session->delete('filter');
+                $nada = false;
+                
+            }
             $this->loadModel('User');
             $this->set('user', $this->Auth->user());
             $this->set('nada', $nada);
