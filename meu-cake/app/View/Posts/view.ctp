@@ -4,6 +4,11 @@
             <h3 class="panel-title"><?php echo h($post['Post']['title']); ?></h3>
         </div>
         <div class="panel-body">
+            <?php if($post['Post']['is_active']):?>
+                <p> <span class="text-success"><i class="fas fa-check-circle"></i> Ativo</span></p>
+            <?php else:?>
+                <p> <span class="text-muted"><i class="fas fa-times-circle"></i> Inativo</span></p>
+            <?php endif ?>
             <p class="post-info">
                 <strong>Criado em: <?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?> 
                 por: <?php echo h($post['User']['username']); ?> 

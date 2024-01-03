@@ -169,13 +169,14 @@ class PostsController extends AppController {
                    
                }
                if (!empty($filtro['Post']['create'])) {
-                    $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
+                
+                    $datai = date('d-m-Y', strtotime( $filtro['Post']['create']));
                     $conditions['Post.created >= '] = $datai;
                 }
                 
                 if (!empty($filtro['Post']['end'])) {
-                    $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['end'])));
-                    $conditions['Post.modified <= '] = $dataf;
+                    $dataf = date('d-m-Y', strtotime( $filtro['Post']['end']));
+                    $conditions['Post.modified <== '] = $dataf;
                 }
             
                

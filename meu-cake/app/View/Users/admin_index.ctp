@@ -70,8 +70,8 @@
                                     <?php foreach ($posts as $post): ?>
                                         <tr>
                                             <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'Posts', 'action' => 'view', $post['Post']['id']]) ?></td>
-                                            <td><?php echo $post['Post']['created'] ?></td>
-                                            <td><?php echo $post['Post']['modified'] ?></td>
+                                            <td><?php echo date('d/m/Y H:i:s', strtotime($post['Post']['created'])); ?></td>
+                                            <td><?php echo date('d/m/Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
                                             <td>
                                                 <?php echo $this->Html->link(
                                                     '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>',

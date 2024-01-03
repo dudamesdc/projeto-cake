@@ -139,23 +139,26 @@ class UsersController extends AppController
                 
             }
             if (!empty($filtro['Post']['create'])) {
-                 $datai = date('Y-m-d', strtotime(implode('-', $filtro['Post']['create'])));
-                 $conditions['Post.created >='] = $datai;
+             
+                 $datai = date('d-m-Y', strtotime( $filtro['Post']['create']));
+                 $conditions['Post.created >= '] = $datai;
              }
              
              if (!empty($filtro['Post']['end'])) {
-                 $dataf = date('Y-m-d', strtotime(implode('-', $filtro['Post']['modified'])));
-                 $conditions['Post.modified <='] = $dataf;
+                 $dataf = date('d-m-Y', strtotime( $filtro['Post']['end']));
+                 $conditions['Post.modified <= '] = $dataf;
              }
          
             
          
-            if ($filtro['Post']['is_active']== '1') {
-                $conditions['Post.is_active'] = ($filtro['Post']['is_active'] == '1');
+            if(isset ($filtro['Post']['is_active'])&& $filtro['Post']['is_active'] != null) {
+                if($filtro['Post']['is_active'] == true){
+                    $conditions['Post.is_active'] = true;
+                }else{
+                       $conditions['Post.is_active'] = false;
+                }
             }
-         
-            
-        }
+         }
         
         return $conditions;
  }

@@ -36,6 +36,12 @@
                                 </div>
 
                                 <div class="panel-body">
+                                    <?php if($post['Post']['is_active']):?>
+                                         <p> <span class="text-success"><i class="fas fa-check-circle"></i> Ativo</span></p>
+
+                                    <?php else:?>
+                                        <p> <span class="text-muted"><i class="fas fa-times-circle"></i> Inativo</span></p>
+                                    <?php endif ?>
                                     <span class="data-post">
                                         Criado em <?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?> por 
                                         <?php echo $post['User']['username']; ?>

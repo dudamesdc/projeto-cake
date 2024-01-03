@@ -46,8 +46,8 @@
                                         <?php foreach ($posts as $post): ?>
                                             <tr>
                                                 <td><?php echo $this->Html->link($post['Post']['title'], ['controller' => 'posts', 'action' => 'view', $post['Post']['id']]); ?></td>
-                                                <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['created'])); ?></td>
-                                                <td><?php echo date('d-m-Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
+                                                <td><?php echo date('d/m/Y H:i:s', strtotime($post['Post']['created'])); ?></td>
+                                                <td><?php echo date('d/m/Y H:i:s', strtotime($post['Post']['modified'])); ?></td>
                                                 <td>
                                                     <?php
 
