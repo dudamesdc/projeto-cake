@@ -3,7 +3,7 @@
 A simple **blog application** built with [CakePHP](https://cakephp.org/), using **PostgreSQL** as the database and running in **Docker** containers.  
 This project includes user authentication, post management, and an admin dashboard — covering the essential features of a modern blog.
 
----
+
 
 ##  Features
 
@@ -26,14 +26,14 @@ This project includes user authentication, post management, and an admin dashboa
 - **Dockerized**
   - Fully containerized with Docker for easy setup
 
----
+
 
 ## Requirements
 
 - [Docker](https://docs.docker.com/get-docker/)  
 - [Docker Compose](https://docs.docker.com/compose/)  
 
----
+
 
 ##  Installation
 
